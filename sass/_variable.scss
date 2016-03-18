@@ -1,29 +1,48 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300,600|Open+Sans+Condensed:300,700);
 
+//Media Query
+$extra-small-screen-only: "(max-width: 768px)";
+$small-screen-up: "(min-width: 768px)";
+$medium-screen-up: "(min-width: 992px)";
+$large-screen-up: "(min-width: 1200px)";
+
 // Colors
-$orange: #f5734b;
 $yellow: #fad089;
-$dark-green: #009193;
-$green: #469b9d;
-$medium-green: #6bc2bb;   //nav background
-$light-green: #76c7c0;   //splash background
-$light-blue: #9cc4e4;
-$very-light-blue: #C5EFF7;
-$blue: #446cb3;
-$dark-blue: #1b325f;
+$green: #66CC99;
+$asphalt: #34495e;
+
+$light-orange: #F27935;
+$orange: #F9690E;
+
+$red: #EF4836;
+
+$very-dark-gray: #333333;
 $dark-gray: #666666;
 $gray: #999999;
 $light-gray: #dddddd;
 $very-light-gray: #f3f3f3;
-$red: #ef7271;
-$dark-pink: #f46161;
-$pink: #f78f8f;
+
+$warsize-dropdown-bg-color: $green;
 
 
 // Typography
-$header-font: 'Open Sans Condensed', sans-serif;
-$body-font: 'Raleway', sans-serif;
+@font-face {
+    font-family: 'supercell-magic';
+    src: url('../fonts/Supercell-magic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+$header-font: 'supercell-magic', Arial, sans-serif;
+$body-font: Arial, sans-serif;
+
 
 
 // Measurements
+$sidebar-width: 250px;
+
+$warsize-dropdown-width: 11rem;
+
+$modal-header-height: 51px;
+$modal-footer-height: 56px;
 

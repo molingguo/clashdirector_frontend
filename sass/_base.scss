@@ -1,7 +1,61 @@
+h1, h2, h3, h4, h5, h6 {
+	font-family: $header-font;
+}
+
+body {
+	font-family: $body-font;
+}
+
 ul, li {
 	list-style: none;
 }
 
 ul {
 	padding-left: 0;
+}
+
+#menu-toggle {
+	display: inherit;
+	
+	@include small-screen-up {
+		display: none;
+	}
+}
+
+.modal-footer {
+	text-align: left;
+	padding: 8px 15px;
+}
+
+/*
+Sticky Modal Header and Footer for medium and large screen
+ */
+@include medium-screen-up {
+
+	.modal-dialog {
+		height: calc(100% - 60px);
+	}
+
+	.modal-content {
+		height: 100%;
+	}
+
+	.modal-header {
+		position: fixed;
+		width: 100%;
+		top: 0;
+	}
+
+	.modal-body {
+		height: calc(100% - #{$modal-header-height} - #{$modal-footer-height});
+		margin-top: $modal-header-height;
+		margin-bottom: $modal-footer-height;
+		overflow-y: scroll;
+	}
+
+	.modal-footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+	}
 }

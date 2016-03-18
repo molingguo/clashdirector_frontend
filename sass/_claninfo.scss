@@ -1,0 +1,106 @@
+.clan-badge-wrapper {
+	position: relative;
+
+	.clan-level {
+		color: white;
+		z-index: 2;
+		font-family: "supercell-magic", "Open Sans Condensed", sans-serif;
+		font-size: 1rem;
+		position: absolute;
+		top: 12%;
+		left: 51.5%;
+		transform: translateX(-50%);
+
+		@include medium-screen-up {
+			font-size: 1.2rem;
+		}
+
+		@include large-screen-up {
+			font-size: 1.2rem;
+		}
+	}
+
+	.clan-overlay-wrapper {
+		width: 36%;
+		max-width: 48px;
+		position: absolute;
+		top: 11%;
+		left: 51%;
+    	transform: translateX(-50%);
+	}
+
+	.clan-badge-overlay {
+		width: 100%;
+	}
+
+	.clan-badge {
+		@include center-block;
+		width: 100%;
+		max-width: 120px;
+	}
+}
+
+.clan-name {
+	font-size: 2.4rem;
+	@include small-screen-up {
+		font-size: 3.6rem;
+	}
+}
+
+.clan-tag {
+	font-size: 1.3rem;
+
+	@include medium-screen-up {
+		font-size: 1.8rem;
+	}
+}
+
+.clan-extra-info {
+	padding-left: 2rem;
+}
+
+.clan-description {
+
+}
+
+.member-list {
+	margin-top: 4rem;
+
+	ul > li {
+		margin-top: 0.2rem;
+		margin-bottom: 0.2rem;
+		background: $very-light-gray;
+	}
+
+	.member-list-wrapper {
+		padding: 2rem 30px;
+	}
+
+	.member-rank {
+		font-family: $header-font;
+		font-size: 2rem;
+		line-height: 48px;
+	}
+
+	.member-name {
+		font-family: $header-font;
+		font-size: 2rem;
+	}
+
+	.member-trophies {
+		font-family: $header-font;
+		font-size: 1.8rem;
+		line-height: 48px;
+	}
+
+	@include extra-small-screen-only {
+		.member-rank, .member-name, .member-trophies {
+			font-size: 1.2rem;
+		}
+
+		.member-rank, .member-trophies {
+			line-height: 37px;
+		}
+	}
+}
+

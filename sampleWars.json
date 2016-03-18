@@ -1,0 +1,13 @@
+{
+  "wars": [
+  { "size": 15, 
+    "isActive": false
+  }, {
+    "size": 25,
+    "isActive": false
+  }, {
+    "size": 45,
+    "isActive": false
+  }
+  ]
+}

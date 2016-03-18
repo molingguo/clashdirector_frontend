@@ -1,0 +1,13 @@
+<div class="row start-war-section">
+	<h2 class="text-center">Ready?</h2>
+	<div class="text-center"><button class="btn btn-default start-war-button-large" ng-click="openModal('lg')">
+		<img src="img/shared/wars.png" alt="">
+		Start War!
+	</button></div>
+</div>
+
+<ul>
+	<li ng-repeat="war in wars">
+		<a href="#/war/{{$index}}">War {{$index}}</a>
+	</li>
+</ul>

@@ -1,8 +1,10 @@
-app.factory('wars', [function(){
+app.factory('wars', function($http){
   // service body
-  var wars = {
-  	wars: []
+  var wars = {};
+
+  wars.getWars = function() {
+  	return $http.get("../../sampleWars.json");
   };
 
   return wars;
-}])
+});

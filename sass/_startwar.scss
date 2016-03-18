@@ -1,0 +1,114 @@
+.start-war-section {
+	margin-top: 10rem;
+}
+
+.start-war-button {
+	font-family: $header-font;
+	background: $light-orange;
+	color: white;
+	width: $warsize-dropdown-width;
+	font-size: 1.8rem;
+
+	&.inactive {
+		background: $gray;
+		pointer-events: none;
+	}
+
+	&:hover, &:focus {
+		background: $orange;
+		outline: none;
+		color: white;
+	}
+}
+
+.quit-x-button {
+	font-size: 2.5rem;
+	position: absolute;
+	right: 1.5rem;
+    top: 1rem;
+}
+
+.start-war-button-large {
+	margin-top: 2rem;
+	font-family: $header-font;
+	background: $light-orange;
+	color: white;
+	font-size: 3rem;
+	padding: 2rem;
+    border-radius: 1rem;
+
+    &:hover, &:focus {
+    	background: $orange;
+    	color: white;
+    	outline: none;
+    }
+
+	img {
+		width: 4.8rem;
+	}
+}
+
+#war-size-button {
+	color: white;
+	background: $warsize-dropdown-bg-color;
+	width: $warsize-dropdown-width;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.7rem;
+
+    .caret {
+    	@include medium-caret;
+    }
+}
+
+.war-size-dropdown {
+	background: $warsize-dropdown-bg-color;
+	color: white;
+	width: $warsize-dropdown-width;
+	min-width: $warsize-dropdown-width;
+	padding: 0;
+
+	li {
+		padding: 0.5rem 1.5rem;
+		font-size: 1.7rem;
+
+		&:hover {
+			background: darken($warsize-dropdown-bg-color, 10%);
+			cursor: pointer;
+		}
+	}
+}
+
+.select-participants {
+	margin-top: 2rem;
+
+	.in-out-war-button {
+		width: $warsize-dropdown-width;
+		background: $red;
+		color: white;
+		font-size: 1.6rem;
+		font-family: $header-font;
+
+		&.in-war {
+			background: $green;
+		} 
+
+		&:hover, &:focus {
+			outline: none;
+		}
+	}
+
+	.participants-list {
+		> li {
+			padding: 0.5rem 0;
+			margin: 0.1rem 0;
+			background: $very-light-gray;
+			line-height: 36px;
+
+			.participant-name, .participant-index, .participant-war-position {
+				font-size: 1.5rem;
+				font-family: $header-font;
+			}
+		}
+	}
+}
+

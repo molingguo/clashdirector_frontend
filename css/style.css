@@ -1,8 +1,292 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,500,300,600|Open+Sans+Condensed:300,700);
+@font-face {
+  font-family: 'supercell-magic';
+  src: url("../fonts/Supercell-magic-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: "supercell-magic", Arial, sans-serif; }
+
+body {
+  font-family: Arial, sans-serif; }
+
 ul, li {
   list-style: none; }
 
 ul {
   padding-left: 0; }
+
+#menu-toggle {
+  display: inherit; }
+  @media (min-width: 768px) {
+    #menu-toggle {
+      display: none; } }
+
+.modal-footer {
+  text-align: left;
+  padding: 8px 15px; }
+
+/*
+Sticky Modal Header and Footer for medium and large screen
+ */
+@media (min-width: 992px) {
+  .modal-dialog {
+    height: calc(100% - 60px); }
+
+  .modal-content {
+    height: 100%; }
+
+  .modal-header {
+    position: fixed;
+    width: 100%;
+    top: 0; }
+
+  .modal-body {
+    height: calc(100% - 51px - 56px);
+    margin-top: 51px;
+    margin-bottom: 56px;
+    overflow-y: scroll; }
+
+  .modal-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%; } }
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+  #wrapper.toggled {
+    padding-left: 250px; }
+    #wrapper.toggled #sidebar-wrapper {
+      width: 250px; }
+    #wrapper.toggled #page-content-wrapper {
+      position: absolute;
+      margin-right: -250px; }
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: black;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px; }
+
+/* Sidebar Styles */
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0; }
+  .sidebar-nav .logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90%;
+    margin-top: 1rem;
+    margin-bottom: 3rem; }
+  .sidebar-nav li {
+    padding: 2rem 3rem; }
+    .sidebar-nav li:hover {
+      background: #666666;
+      cursor: pointer; }
+    .sidebar-nav li a {
+      text-decoration: none;
+      color: white;
+      font-size: 2rem;
+      font-family: "supercell-magic", Arial, sans-serif; }
+      .sidebar-nav li a:hover {
+        text-decoration: none; }
+
+@media (min-width: 768px) {
+  #wrapper {
+    padding-left: 250px; }
+    #wrapper.toggled {
+      padding-left: 0; }
+      #wrapper.toggled #sidebar-wrapper {
+        width: 0; }
+      #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0; }
+
+  #sidebar-wrapper {
+    width: 250px; }
+
+  #page-content-wrapper {
+    padding: 15px;
+    position: relative; } }
+#menu-toggle {
+  position: absolute;
+  top: 0;
+  left: 0; }
+
+.clan-badge-wrapper {
+  position: relative; }
+  .clan-badge-wrapper .clan-level {
+    color: white;
+    z-index: 2;
+    font-family: "supercell-magic", "Open Sans Condensed", sans-serif;
+    font-size: 1rem;
+    position: absolute;
+    top: 12%;
+    left: 51.5%;
+    transform: translateX(-50%); }
+    @media (min-width: 992px) {
+      .clan-badge-wrapper .clan-level {
+        font-size: 1.2rem; } }
+    @media (min-width: 1200px) {
+      .clan-badge-wrapper .clan-level {
+        font-size: 1.2rem; } }
+  .clan-badge-wrapper .clan-overlay-wrapper {
+    width: 36%;
+    max-width: 48px;
+    position: absolute;
+    top: 11%;
+    left: 51%;
+    transform: translateX(-50%); }
+  .clan-badge-wrapper .clan-badge-overlay {
+    width: 100%; }
+  .clan-badge-wrapper .clan-badge {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 120px; }
+
+.clan-name {
+  font-size: 2.4rem; }
+  @media (min-width: 768px) {
+    .clan-name {
+      font-size: 3.6rem; } }
+
+.clan-tag {
+  font-size: 1.3rem; }
+  @media (min-width: 992px) {
+    .clan-tag {
+      font-size: 1.8rem; } }
+
+.clan-extra-info {
+  padding-left: 2rem; }
+
+.member-list {
+  margin-top: 4rem; }
+  .member-list ul > li {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    background: #f3f3f3; }
+  .member-list .member-list-wrapper {
+    padding: 2rem 30px; }
+  .member-list .member-rank {
+    font-family: "supercell-magic", Arial, sans-serif;
+    font-size: 2rem;
+    line-height: 48px; }
+  .member-list .member-name {
+    font-family: "supercell-magic", Arial, sans-serif;
+    font-size: 2rem; }
+  .member-list .member-trophies {
+    font-family: "supercell-magic", Arial, sans-serif;
+    font-size: 1.8rem;
+    line-height: 48px; }
+  @media (max-width: 768px) {
+    .member-list .member-rank, .member-list .member-name, .member-list .member-trophies {
+      font-size: 1.2rem; }
+    .member-list .member-rank, .member-list .member-trophies {
+      line-height: 37px; } }
+
+.start-war-section {
+  margin-top: 10rem; }
+
+.start-war-button {
+  font-family: "supercell-magic", Arial, sans-serif;
+  background: #F27935;
+  color: white;
+  width: 11rem;
+  font-size: 1.8rem; }
+  .start-war-button.inactive {
+    background: #999999;
+    pointer-events: none; }
+  .start-war-button:hover, .start-war-button:focus {
+    background: #F9690E;
+    outline: none;
+    color: white; }
+
+.quit-x-button {
+  font-size: 2.5rem;
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem; }
+
+.start-war-button-large {
+  margin-top: 2rem;
+  font-family: "supercell-magic", Arial, sans-serif;
+  background: #F27935;
+  color: white;
+  font-size: 3rem;
+  padding: 2rem;
+  border-radius: 1rem; }
+  .start-war-button-large:hover, .start-war-button-large:focus {
+    background: #F9690E;
+    color: white;
+    outline: none; }
+  .start-war-button-large img {
+    width: 4.8rem; }
+
+#war-size-button {
+  color: white;
+  background: #66CC99;
+  width: 11rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.7rem; }
+  #war-size-button .caret {
+    border-top: 5px dashed;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent; }
+
+.war-size-dropdown {
+  background: #66CC99;
+  color: white;
+  width: 11rem;
+  min-width: 11rem;
+  padding: 0; }
+  .war-size-dropdown li {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.7rem; }
+    .war-size-dropdown li:hover {
+      background: #40bf80;
+      cursor: pointer; }
+
+.select-participants {
+  margin-top: 2rem; }
+  .select-participants .in-out-war-button {
+    width: 11rem;
+    background: #EF4836;
+    color: white;
+    font-size: 1.6rem;
+    font-family: "supercell-magic", Arial, sans-serif; }
+    .select-participants .in-out-war-button.in-war {
+      background: #66CC99; }
+    .select-participants .in-out-war-button:hover, .select-participants .in-out-war-button:focus {
+      outline: none; }
+  .select-participants .participants-list > li {
+    padding: 0.5rem 0;
+    margin: 0.1rem 0;
+    background: #f3f3f3;
+    line-height: 36px; }
+    .select-participants .participants-list > li .participant-name, .select-participants .participants-list > li .participant-index, .select-participants .participants-list > li .participant-war-position {
+      font-size: 1.5rem;
+      font-family: "supercell-magic", Arial, sans-serif; }
 
 /*# sourceMappingURL=style.css.map */

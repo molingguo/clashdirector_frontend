@@ -2,6 +2,10 @@
 	margin-top: 10rem;
 }
 
+.opponent-clan {
+	margin-top: 1rem;
+}
+
 .start-war-button {
 	font-family: $header-font;
 	background: $light-orange;
@@ -79,7 +83,7 @@
 }
 
 .select-participants {
-	margin-top: 2rem;
+	margin-top: 1rem;
 
 	.in-out-war-button {
 		width: $warsize-dropdown-width;

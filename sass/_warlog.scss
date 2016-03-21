@@ -1,0 +1,31 @@
+.war-log-header {
+	font-size: 2.4rem;
+	font-family: $header-font;
+}
+
+.warlog-list-wrapper {
+	margin-top: 5rem;
+
+	.warlog-list {
+		background: lighten($red, 20%);
+		padding: 1.5rem;
+		margin: 0.1rem 0;
+
+		&.won {
+			background: lighten($green, 20%);
+		}
+
+		.warlog-clan-name, .vs-text, .opponent-clan-name, .warlog-detail {
+			font-family: $header-font;
+			font-size: 1.8rem;
+		}
+
+		.vs-text, .warlog-detail {
+			line-height: 42px;
+		}
+
+		.war-score {
+			font-size: 1.2rem;
+		}
+	}
+}

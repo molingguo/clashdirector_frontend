@@ -39,3 +39,37 @@
     border-left: 6px solid transparent;
 }
 
+@mixin text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@mixin cancel-button {
+	font-family: $header-font;
+	background: $gray;
+	color: white;
+
+	&:hover, &:focus {
+    	background: $dark-gray;;
+    	color: white;
+    	outline: none;
+    }
+}
+
+@mixin submit-button {
+	font-family: $header-font;
+	background: $light-orange;
+	color: white;
+
+	&:hover, &:focus {
+    	background: $orange;
+    	color: white;
+    	outline: none;
+    }
+
+    &.inactive {
+    	background: $dark-gray;
+    	pointer-events: none;
+    }
+}

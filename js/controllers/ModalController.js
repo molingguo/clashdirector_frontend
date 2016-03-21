@@ -1,8 +1,11 @@
-app.controller('ModalController', function ($scope, $uibModalInstance, members, configure) {
+app.controller('ModalController', function ($scope, $uibModalInstance, members, configure, wars) {
 	$scope.warSizeOptions = configure.warSizeOptions;
 	$scope.warSize = $scope.warSizeOptions[0];
+	$scope.warSizeNumber = function() {
+		return Number($scope.warSize.substring(0, 2));
+	}
 	$scope.members = members;
-	$scope.warMembers = [];
+	$scope.warMembers = wars.getWarMembers();
 	
 	$scope.addRemoveMember = function(member) {
 		if (_.findWhere($scope.warMembers, {'name': member.name})) {
@@ -38,7 +41,9 @@ app.controller('ModalController', function ($scope, $uibModalInstance, members, 
 	}
 
 	$scope.ok = function () {
-		$uibModalInstance.close($scope.warSize, $scope.warMembers);
+		wars.setWarMembers($scope.warMembers);
+		//wars.setWarSize(Number($scope.warSize.substring(0, 2)));
+		$uibModalInstance.close($scope.warSize);
 	};
 
 	$scope.cancel = function () {

@@ -98,18 +98,20 @@ Sticky Modal Header and Footer for medium and large screen
     max-width: 90%;
     margin-top: 1rem;
     margin-bottom: 3rem; }
-  .sidebar-nav li {
+  .sidebar-nav li:hover {
+    background: #666666;
+    cursor: pointer; }
+  .sidebar-nav li a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-family: "supercell-magic", Arial, sans-serif;
+    display: block;
     padding: 2rem 3rem; }
-    .sidebar-nav li:hover {
-      background: #666666;
-      cursor: pointer; }
-    .sidebar-nav li a {
-      text-decoration: none;
-      color: white;
-      font-size: 2rem;
-      font-family: "supercell-magic", Arial, sans-serif; }
-      .sidebar-nav li a:hover {
-        text-decoration: none; }
+    .sidebar-nav li a:hover {
+      text-decoration: none; }
+    .sidebar-nav li a.active {
+      color: #F9690E; }
 
 @media (min-width: 768px) {
   #wrapper {
@@ -200,6 +202,8 @@ Sticky Modal Header and Footer for medium and large screen
     font-family: "supercell-magic", Arial, sans-serif;
     font-size: 1.8rem;
     line-height: 48px; }
+    .member-list .member-trophies img {
+      max-width: 25%; }
   @media (max-width: 768px) {
     .member-list .member-rank, .member-list .member-name, .member-list .member-trophies {
       font-size: 1.2rem; }
@@ -208,6 +212,9 @@ Sticky Modal Header and Footer for medium and large screen
 
 .start-war-section {
   margin-top: 10rem; }
+
+.opponent-clan {
+  margin-top: 1rem; }
 
 .start-war-button {
   font-family: "supercell-magic", Arial, sans-serif;
@@ -269,7 +276,7 @@ Sticky Modal Header and Footer for medium and large screen
       cursor: pointer; }
 
 .select-participants {
-  margin-top: 2rem; }
+  margin-top: 1rem; }
   .select-participants .in-out-war-button {
     width: 11rem;
     background: #EF4836;
@@ -288,5 +295,113 @@ Sticky Modal Header and Footer for medium and large screen
     .select-participants .participants-list > li .participant-name, .select-participants .participants-list > li .participant-index, .select-participants .participants-list > li .participant-war-position {
       font-size: 1.5rem;
       font-family: "supercell-magic", Arial, sans-serif; }
+
+.planner-tabs .nav-tabs {
+  font-family: "supercell-magic", Arial, sans-serif;
+  margin-bottom: 2rem; }
+
+.sign-up-title {
+  font-size: 2rem;
+  margin-bottom: 2rem; }
+
+.sign-up-list > li {
+  padding: 0.5rem 0;
+  font-size: 2rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  background: #f3f3f3;
+  font-family: "supercell-magic", Arial, sans-serif; }
+  .sign-up-list > li .opponent-index, .sign-up-list > li .sign-up-preference {
+    line-height: 42px; }
+  .sign-up-list > li .sign-up-checkbox {
+    font-size: 3rem; }
+  .sign-up-list > li .sign-up-preference {
+    font-size: 1.6rem; }
+    .sign-up-list > li .sign-up-preference:hover {
+      cursor: pointer; }
+
+.current-signer-list {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem; }
+  .current-signer-list .signer-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 28px;
+    height: 42px;
+    pointer-events: none; }
+  .current-signer-list.contains-current .signer-label:last-child {
+    color: #F9690E; }
+
+.arrange-drop-list {
+  min-height: 42px; }
+
+.arrange-labels {
+  line-height: 28px;
+  height: 42px;
+  font-size: 1.5rem;
+  font-family: Arial, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  .arrange-labels.inactive {
+    pointer-events: none; }
+
+.waitinglist-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%; }
+
+.arrange-remove-button {
+  position: absolute;
+  right: 0.1rem;
+  top: 1rem;
+  font-size: 1.8rem;
+  color: #337ab7; }
+  .arrange-remove-button:hover {
+    cursor: pointer;
+    color: #23527c; }
+
+.cancel-button {
+  font-family: "supercell-magic", Arial, sans-serif;
+  background: #999999;
+  color: white; }
+  .cancel-button:hover, .cancel-button:focus {
+    background: #666666;
+    color: white;
+    outline: none; }
+
+.submit-button {
+  font-family: "supercell-magic", Arial, sans-serif;
+  background: #F27935;
+  color: white; }
+  .submit-button:hover, .submit-button:focus {
+    background: #F9690E;
+    color: white;
+    outline: none; }
+  .submit-button.inactive {
+    background: #666666;
+    pointer-events: none; }
+
+.war-log-header {
+  font-size: 2.4rem;
+  font-family: "supercell-magic", Arial, sans-serif; }
+
+.warlog-list-wrapper {
+  margin-top: 5rem; }
+  .warlog-list-wrapper .warlog-list {
+    background: #f79e94;
+    padding: 1.5rem;
+    margin: 0.1rem 0; }
+    .warlog-list-wrapper .warlog-list.won {
+      background: #b3e6cc; }
+    .warlog-list-wrapper .warlog-list .warlog-clan-name, .warlog-list-wrapper .warlog-list .vs-text, .warlog-list-wrapper .warlog-list .opponent-clan-name, .warlog-list-wrapper .warlog-list .warlog-detail {
+      font-family: "supercell-magic", Arial, sans-serif;
+      font-size: 1.8rem; }
+    .warlog-list-wrapper .warlog-list .vs-text, .warlog-list-wrapper .warlog-list .warlog-detail {
+      line-height: 42px; }
+    .warlog-list-wrapper .warlog-list .war-score {
+      font-size: 1.2rem; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,96 @@
+.planner-tabs {
+	.nav-tabs {
+		font-family: $header-font;
+		margin-bottom: 2rem;
+	}
+}
+
+.sign-up-title {
+	font-size: 2rem;
+	margin-bottom: 2rem;
+}
+
+.sign-up-list {
+	> li {
+		padding: 0.5rem 0;
+		font-size: 2rem;
+		margin-top: 0.2rem;
+    	margin-bottom: 0.2rem;
+    	background: $very-light-gray;
+    	font-family: $header-font;
+
+		.opponent-index, .sign-up-preference {
+			line-height: 42px;
+		}
+    	.sign-up-checkbox {
+    		font-size: 3rem;
+    	}
+    	.sign-up-preference {
+    		font-size: 1.6rem;
+
+    		&:hover {
+    			cursor: pointer;
+    		}
+    	}
+	}
+}
+
+.current-signer-list {
+	font-family: $body-font;
+	font-size: 1.5rem;
+
+	.signer-label {
+		@include text-ellipsis;
+		line-height: 28px;
+		height: 42px;
+		pointer-events: none;
+	}
+
+	&.contains-current {
+		.signer-label:last-child {
+			color: $orange;
+		}
+	}
+}
+
+.arrange-drop-list {
+	min-height: 42px;
+}
+
+.arrange-labels {
+	line-height: 28px;
+	height: 42px;
+	font-size: 1.5rem;
+	font-family: $body-font;
+	@include text-ellipsis;
+
+	&.inactive {
+		pointer-events: none;
+	}
+}
+
+.waitinglist-label {
+	@include text-ellipsis;
+	width: 100%;
+}
+
+.arrange-remove-button {
+	position: absolute;
+	right: 0.1rem;
+	top: 1rem;
+	font-size: 1.8rem;
+	color: $link-color;
+
+	&:hover {
+		cursor: pointer;
+		color: $link-color-hover;
+	}
+}
+
+.cancel-button {
+	@include cancel-button;
+}
+
+.submit-button {
+	@include submit-button;
+}

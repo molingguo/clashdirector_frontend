@@ -51,8 +51,6 @@
     }
 
     li {
-    	padding: 2rem 3rem;
-
     	&:hover {
     		background: $dark-gray;
     		cursor: pointer;
@@ -63,10 +61,16 @@
     		color: white;
     		font-size: 2rem;
     		font-family: $header-font;
+            display: block;
+            padding: 2rem 3rem;
 
     		&:hover {
     			text-decoration: none;
     		}
+
+            &.active {
+                color: $orange;
+            }
     	}
 
     }

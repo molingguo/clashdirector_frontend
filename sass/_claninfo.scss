@@ -91,6 +91,10 @@
 		font-family: $header-font;
 		font-size: 1.8rem;
 		line-height: 48px;
+
+		img {
+			max-width: 25%;
+		}
 	}
 
 	@include extra-small-screen-only {

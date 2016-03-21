@@ -1,8 +1,9 @@
 app.controller('ClanInfoController', function($http, $scope, wars, configure) {
+	wars.setActiveLink("claninfo");
+
 	$scope.clanRoleList = configure.clanRoleList;
 
-	$http.get("../../sample.json").success(function(data) {
-		console.log(data);
+	wars.getMembers().success(function(data) {
 		$scope.members = data.clanDetails.results.memberList;
 		$scope.clanBadge = data.clanDetails.results.clanBadgeImg.xl;
 		$scope.clanName = data.clanDetails.results.name;

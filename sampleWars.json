@@ -1,13 +1,37 @@
-{
-  "wars": [
+[
   { "size": 15, 
-    "isActive": false
+    "opponent": "Malaya",
+    "date": "2016-03-01",
+    "won": true, 
+    "score": 42, 
+    "opponent_score": 40
   }, {
     "size": 25,
-    "isActive": false
+    "opponent": "Lions",
+    "date": "2016-03-04",
+    "won": true, 
+    "score": 70, 
+    "opponent_score": 50
   }, {
     "size": 45,
-    "isActive": false
+    "opponent": "Lega Cristallo",
+    "date": "2016-03-10",
+    "won": false, 
+    "score": 90, 
+    "opponent_score": 120
+  }, {
+  	"size": 40,
+  	"opponent": "CCCP",
+  	"date": "2016-03-15",
+    "won": true, 
+    "score": 110, 
+    "opponent_score": 105
+  }, {
+  	"size": 30,
+  	"opponent": "Dirty Rage",
+  	"date": "2016-03-18",
+    "won": false, 
+    "score": 80, 
+    "opponent_score": 88
   }
-  ]
-}
+]

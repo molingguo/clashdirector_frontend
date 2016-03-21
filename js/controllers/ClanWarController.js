@@ -1,39 +1,33 @@
 app.controller('ClanWarController', function($http, $scope, $location, wars, $uibModal, $log, configure) {
+	wars.setActiveLink("clanwar");
 
-	//$route.current.templateUrl = "../../partials/_clanwar-new.html";
-	$scope.warSizeOptions = configure.warSizeOptions;
-	// $scope.warSize = 
-	$scope.currentWar = null;
-	$scope.warMembers = [];
-	$scope.planner = configure.planner;
-
-	if ($scope.currentWar) {
+	if (wars.getCurrentWar()) {
 		$location.path('clanwarplanner');
-	} else {
-		$location.path('clanwar');
+		return;
 	}
 
-	$http.get("../../sample.json").success(function(data) {
+	$scope.range = function(start, stop) {
+		return _.range(start, stop);
+	}
+
+	wars.getMembers().success(function(data) {
 		$scope.members = data.clanDetails.results.memberList;
 	});
 
 	wars.getWars().success(function(data) {
-		$scope.wars = data.wars;
+		$scope.wars = data;
 	});
 
 	$scope.addNewWar = function(warSize) {
 		var newWar = {
-			size: warSize,
-			isActive: true
+			size: Number(warSize.substring(0, 2))
 		};
 		$scope.wars.push(newWar);
-		$scope.currentWar = newWar;
+		wars.setCurrentWar(newWar);
 		$location.path('clanwarplanner');
-		//$route.current.templateUrl = "../../partials/_clanwar-planner.html";
 	}
 	
 	$scope.openModal = function (size) {
-
 		var modalInstance = $uibModal.open({
 			animation: true,
 			templateUrl: 'partials/_modalDialog.html',
@@ -47,11 +41,11 @@ app.controller('ClanWarController', function($http, $scope, $location, wars, $ui
 			}
 		});
 
-		modalInstance.result.then(function (warSize, warMembers) {
+		modalInstance.result.then(function (warSize) {
 			$scope.addNewWar(warSize);
 			console.log(warSize);
 			$scope.warSize = warSize;
-			$scope.warMembers = warMembers;
+			$scope.warMembers = wars.getWarMembers();
 		}, function () {
 			$log.info('Modal dismissed at: ' + new Date());
 		});

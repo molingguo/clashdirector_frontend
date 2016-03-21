@@ -12,7 +12,7 @@ app.factory('configure', function(){
 
   configure.planner = {
   	header: {
-  		signup: "Sign Up Targets",
+  		signup: "Choose Targets",
   		arrange: "Arrangement"
   	}
   }

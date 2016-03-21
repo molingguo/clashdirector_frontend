@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="col-xs-12 war-log-header">War Log</div>
+	<ul class="row warlog-list-wrapper">
+	    <li class="col-xs-12 warlog-list" ng-repeat="war in wars" ng-class="{'won':war.won}">
+	    	<div class="col-xs-4 warlog-clan-name">
+	    		<div>
+	    			{{clanName}}
+	    		</div>
+	    		<div class="war-score">
+	    			<span class="glyphicon glyphicon-star"></span>{{war.score}}
+	    		</div>
+	    	</div>
+	    	<div class="col-xs-2 vs-text">
+	    		V.S
+	    	</div>
+	    	<div class="col-xs-4 opponent-clan-name">
+	    		<div>
+	    			{{war.opponent}}
+	    		</div>
+	    		<div class="war-score">
+	    			<span class="glyphicon glyphicon-star"></span>{{war.opponent_score}}
+	    		</div>
+	    	</div>
+	    	<div class="col-xs-2 warlog-detail">
+	    		<button class="btn btn-default warlog-detail-button">Details</button>
+	    	</div>
+	    </li>
+	</ul>
+</div>

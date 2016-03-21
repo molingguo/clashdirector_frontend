@@ -1,7 +1,7 @@
 
 //Global CONSTANTS
 
-var app = angular.module('clashDirector',['ngRoute', 'ui.bootstrap']);
+var app = angular.module('clashDirector',['ngRoute', 'ui.bootstrap', 'ngDragDrop']);
 
 app.config(['$routeProvider', '$httpProvider', '$locationProvider', 
   function($routeProvider, $httpProvider, $locationProvider) {
@@ -22,7 +22,11 @@ app.config(['$routeProvider', '$httpProvider', '$locationProvider',
       }).
       when('/clanwarplanner', {
         templateUrl: 'partials/_clanwar-planner.html',
-        controller: 'ClanWarController'
+        controller: 'ClanWarPlannerController'
+      }).
+      when('/warlog', {
+        templateUrl: 'partials/_warlog.html',
+        controller: 'WarLogController'
       }).
       when('/war/:id', {
         templateUrl: 'partials/_war.html',
@@ -39,5 +43,30 @@ app.config(['$routeProvider', '$httpProvider', '$locationProvider',
     //    });
     // }
   }]);
-    
+
+
+/*
+Ordinal Filter
+ */
+app.factory('ordinalService', function () {
+  var ordinal = function (input) {
+    var n = input % 100;
+    return n === 0 ? 'th' : (n < 11 || n > 13) ?
+    ['st', 'nd', 'rd', 'th'][Math.min((n - 1) % 10, 3)] : 'th';
+  };
+  return {
+    ordinal: ordinal
+  };
+})
+.filter('ordinal', ['ordinalService', function (ordinalService) {
+  return function (input) {
+    return input + ordinalService.ordinal(input);
+  };
+}])
+.filter('ordinalOnly', ['ordinalService', function (ordinalService) {
+  return function (input) {
+    return ordinalService.ordinal(input);
+  };
+}]);
+
     

@@ -4,10 +4,7 @@
 		<uib-tabset active="active" class="planner-tabs col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
 			<uib-tab index="0" heading="Sign Up" class="signup-tab">
 			<div class="form-group login-form">
-				<input type="text" class="form-control" placeholder="Username">
-			</div>
-			<div class="form-group login-form">
-				<input type="password" class="form-control" placeholder="Password">
+				<input type="text" class="form-control" placeholder="Username For Quick Login">
 			</div>
 			<div class="form-group login-form">
 				<input type="text" class="form-control" placeholder="In Game Name">
@@ -23,11 +20,23 @@
 			</div>
 			</uib-tab>
 			<uib-tab index="1" heading="Log In" class="login-tab">
-			<div class="form-group login-form">
+			<div class="btn-group col-xs-12 alternative-login">
+				<div class="row">
+					<label class="btn btn-default col-xs-6" ng-model="alternativeLogin" uib-btn-radio="'username'">by Username</label>
+					<label class="btn btn-default col-xs-6" ng-model="alternativeLogin" uib-btn-radio="'ingamename'">by In Game Name</label>
+				</div>
+			</div>
+			<div class="form-group login-form" ng-show="alternativeLogin=='username'">
 				<input type="text" class="form-control" placeholder="Username">
 			</div>
-			<div class="form-group login-form">
-				<input type="password" class="form-control" placeholder="Password">
+			<div class="form-group login-form" ng-show="alternativeLogin=='ingamename'">
+				<input type="text" class="form-control" placeholder="In Game Name">
+			</div>
+			<div class="form-group login-form" ng-show="alternativeLogin=='ingamename'">
+				<div class="input-group">
+					<span class="input-group-addon">#</span>
+					<input type="text" class="form-control" placeholder="Clan Tag">
+				</div>
 			</div>
 			<div class="form-group row">
 				<div class="col-xs-12">
@@ -36,7 +45,7 @@
 						Remember Me
 					</div>
 					<div class="col-xs-6 forget-password text-right">
-						<a href="">Forget Password?</a>
+						<a href="">Forget Username?</a>
 					</div>
 				</div>
 			</div>

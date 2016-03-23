@@ -85,6 +85,15 @@ Sticky Modal Header and Footer for medium and large screen
   .login-wrapper .signup-tab, .login-wrapper .login-tab {
     width: 50%;
     text-align: center; }
+  .login-wrapper .alternative-login {
+    margin-bottom: 2rem; }
+    .login-wrapper .alternative-login label {
+      border-radius: 0;
+      border: none;
+      box-shadow: none; }
+      .login-wrapper .alternative-login label.active {
+        background: #F9690E;
+        color: white; }
   .login-wrapper .remember-me {
     color: white;
     padding-left: 0; }

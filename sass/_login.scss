@@ -31,6 +31,21 @@
 		text-align: center;
 	}
 
+	.alternative-login {
+		margin-bottom: 2rem;
+
+		label {
+			border-radius: 0;
+			border: none;
+			box-shadow: none;
+
+			&.active {
+				background: $orange;
+				color: white;
+			}
+		}
+	}
+
 	.remember-me {
 		color: white;
 		padding-left: 0;

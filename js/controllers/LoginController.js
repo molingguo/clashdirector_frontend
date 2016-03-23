@@ -1,6 +1,7 @@
 app.controller('LoginController', function($http, $scope, $location, wars, configure, Auth) {	
 	wars.setActiveLink("login");
 	$scope.rememberMe = false;
+	$scope.alternativeLogin = 'username';
 
 	if (Auth.isLoggedIn()) {
 		console.log('loggedin');

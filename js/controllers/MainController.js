@@ -1,4 +1,4 @@
-app.controller('MainController', function($http, $scope, $location, wars, configure) {
+app.controller('MainController', function($http, $scope, $location, wars, configure, Auth) {
 	//var clanID = "22CQYPVG";
 	// var clanID = "2VLPPLCP";
 	// $http.get("https://set7z18fgf.execute-api.us-east-1.amazonaws.com/prod/?route=getClanDetails&clanTag=%23"+clanID).success(function(data) {
@@ -10,5 +10,9 @@ app.controller('MainController', function($http, $scope, $location, wars, config
 	// 
 	$scope.getActiveLink = function() {
 		return wars.getActiveLink();
+	}
+
+	if (!Auth.isLoggedIn()) {
+		$location.path('login');
 	}
 });

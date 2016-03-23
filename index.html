@@ -38,10 +38,11 @@
     <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-<body>
-	<div id="wrapper">
+<body ng-controller="MainController">
+    <div ng-view autoscroll="true" ng-show="getActiveLink()=='login'"></div>
+	<div id="wrapper" ng-hide="getActiveLink()=='login'">
 	<!-- Sidebar -->
-        <div id="sidebar-wrapper" ng-controller="MainController">
+        <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
             	<img class="logo" src="img/logo.png" alt="">
 <!--                 <li>
@@ -80,9 +81,11 @@
 
 	<!-- Services -->
     <script src="js/services/configure.js"></script>
+    <script src="js/services/auth.js"></script>
 	<script src="js/services/wars.js"></script>
 	<!-- Controllers -->
 	<script src="js/controllers/MainController.js"></script>
+    <script src="js/controllers/LoginController.js"></script>
 	<script src="js/controllers/ClanInfoController.js"></script>
     <script src="js/controllers/ClanWarController.js"></script>
     <script src="js/controllers/ClanWarPlannerController.js"></script>

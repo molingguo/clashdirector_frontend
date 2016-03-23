@@ -1,0 +1,49 @@
+<div class="fullscreen-wrapper">
+	<div class="login-wrapper">
+		<img class="login-logo" src="img/logo.png" alt="logo">
+		<uib-tabset active="active" class="planner-tabs col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+			<uib-tab index="0" heading="Sign Up" class="signup-tab">
+			<div class="form-group login-form">
+				<input type="text" class="form-control" placeholder="Username">
+			</div>
+			<div class="form-group login-form">
+				<input type="password" class="form-control" placeholder="Password">
+			</div>
+			<div class="form-group login-form">
+				<input type="text" class="form-control" placeholder="In Game Name">
+			</div>
+			<div class="form-group login-form">
+				<div class="input-group">
+					<span class="input-group-addon">#</span>
+					<input type="text" class="form-control" placeholder="Clan Tag">
+				</div>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-default btn-block submit-button" ng-click="signUp()">Get Started</button>
+			</div>
+			</uib-tab>
+			<uib-tab index="1" heading="Log In" class="login-tab">
+			<div class="form-group login-form">
+				<input type="text" class="form-control" placeholder="Username">
+			</div>
+			<div class="form-group login-form">
+				<input type="password" class="form-control" placeholder="Password">
+			</div>
+			<div class="form-group row">
+				<div class="col-xs-12">
+					<div class="col-xs-6 remember-me">
+						<span class="glyphicon" ng-click="rememberMe=!rememberMe" ng-class="{'glyphicon-check':rememberMe, 'glyphicon-unchecked':!rememberMe}"></span>
+						Remember Me
+					</div>
+					<div class="col-xs-6 forget-password text-right">
+						<a href="">Forget Password?</a>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-default btn-block submit-button" ng-click="login()">Log In</button>
+			</div>
+			</uib-tab>
+		</uib-tabset>
+	</div>
+</div>

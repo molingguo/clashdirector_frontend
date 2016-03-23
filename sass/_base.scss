@@ -14,6 +14,15 @@ ul {
 	padding-left: 0;
 }
 
+a {
+	color: $link-color;
+
+	&:hover {
+		text-decoration: none;
+		color: $link-color-hover;
+	}
+}
+
 #menu-toggle {
 	display: inherit;
 	

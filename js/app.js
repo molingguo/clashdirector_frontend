@@ -7,10 +7,14 @@ app.config(['$routeProvider', '$httpProvider', '$locationProvider',
   function($routeProvider, $httpProvider, $locationProvider) {
     $routeProvider.
       when('/', {
-        // templateUrl: 'partials/_index.html',
-        // controller: 'MainController'
-        templateUrl: 'partials/_claninfo.html',
-        controller: 'ClanInfoController'
+        templateUrl: 'partials/_login.html',
+        controller: 'LoginController'
+        // templateUrl: 'partials/_claninfo.html',
+        // controller: 'ClanInfoController'
+      }).
+      when('/login', {
+        templateUrl: 'partials/_login.html',
+        controller: 'LoginController'
       }).
       when('/claninfo', {
         templateUrl: 'partials/_claninfo.html',

@@ -49,6 +49,8 @@
 	font-family: $header-font;
 	background: $gray;
 	color: white;
+	border: none;
+	height: $general-button-height;
 
 	&:hover, &:focus {
     	background: $dark-gray;;
@@ -61,6 +63,8 @@
 	font-family: $header-font;
 	background: $light-orange;
 	color: white;
+	border: none;
+	height: $general-button-height;
 
 	&:hover, &:focus {
     	background: $orange;

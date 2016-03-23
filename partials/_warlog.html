@@ -2,6 +2,9 @@
 	<div class="col-xs-12 war-log-header">War Log</div>
 	<ul class="row warlog-list-wrapper">
 	    <li class="col-xs-12 warlog-list" ng-repeat="war in wars" ng-class="{'won':war.won}">
+	    	<div class="warlog-date">
+	    		{{formatDate(war.date)}}
+	    	</div>
 	    	<div class="col-xs-4 warlog-clan-name text-center">
 	    		<div>
 	    			{{clanName}}

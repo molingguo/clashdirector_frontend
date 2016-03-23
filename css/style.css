@@ -406,13 +406,19 @@ Sticky Modal Header and Footer for medium and large screen
     background: #b3e6cc; }
   .warlog-list-wrapper .warlog-list .warlog-clan-name, .warlog-list-wrapper .warlog-list .opponent-clan-name, .warlog-list-wrapper .warlog-list .warlog-detail {
     font-family: "supercell-magic", Arial, sans-serif;
-    font-size: 1.8rem; }
+    font-size: 1.6rem; }
   .warlog-list-wrapper .warlog-list .vs-text {
     font-family: "supercell-magic", Arial, sans-serif;
-    font-size: 1.5rem; }
+    font-size: 1.4rem; }
   .warlog-list-wrapper .warlog-list .vs-text, .warlog-list-wrapper .warlog-list .warlog-detail {
     line-height: 42px; }
   .warlog-list-wrapper .warlog-list .war-score {
+    font-size: 1.2rem; }
+  .warlog-list-wrapper .warlog-list .warlog-date {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    color: #666666;
     font-size: 1.2rem; }
 
 .war-details-header {

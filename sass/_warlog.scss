@@ -17,12 +17,12 @@
 
 		.warlog-clan-name, .opponent-clan-name, .warlog-detail {
 			font-family: $header-font;
-			font-size: 1.8rem;
+			font-size: 1.6rem;
 		}
 
 		.vs-text {
 			font-family: $header-font;
-			font-size: 1.5rem
+			font-size: 1.4rem
 		}
 
 		.vs-text, .warlog-detail {
@@ -30,6 +30,14 @@
 		}
 
 		.war-score {
+			font-size: 1.2rem;
+		}
+
+		.warlog-date {
+			position: absolute;
+			top: 3rem;
+			left: 3rem;
+			color: $dark-gray;
 			font-size: 1.2rem;
 		}
 	}

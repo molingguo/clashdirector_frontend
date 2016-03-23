@@ -3,6 +3,6 @@ app.controller('WarLogController', function($http, $scope, $location, wars, conf
 
 	$scope.clanName = "USA UNITED";
 	wars.getWars().success(function(data) {
-		$scope.wars = data;
+		$scope.wars = data.reverse();
 	});
 });

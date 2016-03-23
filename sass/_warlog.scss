@@ -1,13 +1,13 @@
 .war-log-header {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 	font-size: 2.4rem;
 	font-family: $header-font;
 }
 
 .warlog-list-wrapper {
-	margin-top: 5rem;
-
 	.warlog-list {
-		background: lighten($red, 20%);
+		background: lighten($red, 25%);
 		padding: 1.5rem;
 		margin: 0.1rem 0;
 
@@ -15,9 +15,14 @@
 			background: lighten($green, 20%);
 		}
 
-		.warlog-clan-name, .vs-text, .opponent-clan-name, .warlog-detail {
+		.warlog-clan-name, .opponent-clan-name, .warlog-detail {
 			font-family: $header-font;
 			font-size: 1.8rem;
+		}
+
+		.vs-text {
+			font-family: $header-font;
+			font-size: 1.5rem
 		}
 
 		.vs-text, .warlog-detail {
@@ -26,6 +31,77 @@
 
 		.war-score {
 			font-size: 1.2rem;
+		}
+	}
+}
+
+.war-details-header {
+	font-family: $header-font;
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	background: lighten($red, 25%);
+
+	&.won {
+		background: lighten($green, 20%);
+	}
+}
+
+.details-date {
+	background: white;
+	width: 9rem;
+	border: 1px solid $gray;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	.details-date-month {
+		font-size: 1rem;
+	}
+
+	.details-date-day {
+		font-size: 3rem;
+	}
+
+	.details-date-year {
+		font-size: 1rem;
+	}
+}
+
+.details-header-section {
+
+	.details-clan-name {
+		font-size: 2.2rem;
+	}
+
+	.details-clan-score {
+		margin-top: 2rem;
+		font-size: 5rem;
+	}
+}
+
+.war-result-text{
+	font-size: 3rem;
+	margin: 1rem 0;
+}
+
+.war-details-list-wrapper {
+	.war-details-list {
+		background: $very-light-gray;
+		font-size: 1.5rem;
+		padding: 1.5rem;
+		margin: 0.1rem 0;
+
+		.war-rank, .war-member {
+			font-family: $header-font;
+		}
+
+		.war-stars {
+			img {
+				width: 50%;
+				margin-top: -0.6rem;
+			}
 		}
 	}
 }

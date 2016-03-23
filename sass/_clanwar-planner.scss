@@ -1,4 +1,6 @@
 .planner-tabs {
+	margin-top: 1rem;
+
 	.nav-tabs {
 		font-family: $header-font;
 		margin-bottom: 2rem;
@@ -93,4 +95,8 @@
 
 .submit-button {
 	@include submit-button;
+}
+
+.action-buttons {
+	margin-bottom: 2rem;
 }

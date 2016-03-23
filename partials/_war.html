@@ -1,1 +1,98 @@
-{{size}}
+<div class="row">
+	<div class="row war-details-header" ng-class="{'won':war.won}">
+		<div class="details-date text-center">
+			<div class="details-date-month">
+				{{warDate.format('MMMM')}}
+			</div>
+			<div class="details-date-day">
+				{{warDate.format('D')}}
+			</div>
+			<div class="details-date-year">
+				{{warDate.format('YYYY')}}
+			</div>
+		</div>
+		<div class="col-xs-6 text-center details-header-section">
+			<div class="col-xs-12 details-clan-name">
+				{{clanName}}
+			</div>
+			<div class="col-xs-12 details-clan-score">
+				{{war.score}}
+			</div>
+		</div>
+		<div class="col-xs-6 text-center details-header-section">
+			<div class="col-xs-12 details-clan-name">
+				{{war.opponent}}
+			</div>
+			<div class="col-xs-12 details-clan-score">
+				{{war.opponent_score}}
+			</div>
+		</div>
+		<div class="col-xs-12 text-center">
+			<div>
+				{{war.size}} vs. {{war.size}}
+			</div>
+			<div class="war-result-text">
+				{{wonText}}
+			</div>
+			<div>
+				Total Destruction: {{war.destruction}}%
+			</div>
+		</div>
+	</div>
+	<ul class="row war-details-list-wrapper">
+	    <li class="war-details-list col-xs-12" ng-repeat="member in war.warMembers">
+	    	<div class="col-xs-1 text-center war-rank">
+	    		{{$index+1}}
+	    	</div>
+	    	<div class="col-xs-11">
+	    		<div class="row">
+	    			<div class="col-xs-4 war-member">
+	    				{{member.name}}
+	    			</div>
+	    			<div class="col-xs-4">
+	    				<div class="row">
+	    					<div class="col-xs-6">
+	    						<strong>Attack 1</strong>
+	    					</div>
+	    					<div class="col-xs-6 war-stars">
+	    						<img src="img/shared/star_0.png" alt="0 star" ng-show="member.attack1_stars==0">
+	    						<img src="img/shared/star_1.png" alt="1 star" ng-show="member.attack1_stars==1">
+	    						<img src="img/shared/star_2.png" alt="2 star" ng-show="member.attack1_stars==2">
+	    						<img src="img/shared/star_3.png" alt="3 star" ng-show="member.attack1_stars==3">
+	    					</div>
+	    				</div>
+	    				<div class="row">
+	    					<div class="col-xs-6">
+	    						{{getAttackTarget(member.attack1)}}
+	    					</div>
+	    					<div class="col-xs-6">
+	    						{{member.attack1_percentage}}<span ng-show="member.attack1_percentage">%</span>
+	    					</div>
+	    				</div>
+	    			</div>
+	    			<div class="col-xs-4">
+	    				<div class="row">
+	    					<div class="col-xs-6">
+	    						<strong>Attack 2</strong>
+	    					</div>
+	    					<div class="col-xs-6 war-stars">
+	    						<img src="img/shared/star_0.png" alt="0 star" ng-show="member.attack2_stars==0">
+	    						<img src="img/shared/star_1.png" alt="1 star" ng-show="member.attack2_stars==1">
+	    						<img src="img/shared/star_2.png" alt="2 star" ng-show="member.attack2_stars==2">
+	    						<img src="img/shared/star_3.png" alt="3 star" ng-show="member.attack2_stars==3">
+	    					</div>
+	    				</div>
+	    				<div class="row">
+	    					<div class="col-xs-6">
+	    						{{getAttackTarget(member.attack2)}}
+	    					</div>
+	    					<div class="col-xs-6">
+	    						{{member.attack2_percentage}}<span ng-show="member.attack2_percentage">%</span>
+	    					</div>
+	    				</div>
+	    			</div>
+	    		</div>	
+	    	</div>
+	    </li>
+	</ul>
+</div>

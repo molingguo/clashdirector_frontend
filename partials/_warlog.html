@@ -2,7 +2,7 @@
 	<div class="col-xs-12 war-log-header">War Log</div>
 	<ul class="row warlog-list-wrapper">
 	    <li class="col-xs-12 warlog-list" ng-repeat="war in wars" ng-class="{'won':war.won}">
-	    	<div class="col-xs-4 warlog-clan-name">
+	    	<div class="col-xs-4 warlog-clan-name text-center">
 	    		<div>
 	    			{{clanName}}
 	    		</div>
@@ -10,10 +10,10 @@
 	    			<span class="glyphicon glyphicon-star"></span>{{war.score}}
 	    		</div>
 	    	</div>
-	    	<div class="col-xs-2 vs-text">
-	    		V.S
+	    	<div class="col-xs-2 vs-text text-center">
+	    		{{war.size}} V.S {{war.size}}
 	    	</div>
-	    	<div class="col-xs-4 opponent-clan-name">
+	    	<div class="col-xs-4 opponent-clan-name text-center">
 	    		<div>
 	    			{{war.opponent}}
 	    		</div>
@@ -22,7 +22,7 @@
 	    		</div>
 	    	</div>
 	    	<div class="col-xs-2 warlog-detail">
-	    		<button class="btn btn-default warlog-detail-button">Details</button>
+	    		<a class="btn btn-default warlog-detail-button" ng-href="#/war/{{$index}}">Details</a>
 	    	</div>
 	    </li>
 	</ul>

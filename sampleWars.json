@@ -1,37 +1,457 @@
 [
-  { "size": 15, 
+  { "size": 30, 
     "opponent": "Malaya",
     "date": "2016-03-01",
-    "won": true, 
-    "score": 42, 
-    "opponent_score": 40
+    "won": false, 
+    "score": 80, 
+    "opponent_score": 88,
+    "destruction": 90,
+    "warMembers": [
+      {
+        "name": "STORM",
+        "attack1": 2,
+        "attack2": 1,
+        "attack1_stars": 3,
+        "attack2_stars": 2,
+        "attack1_percentage": 100,
+        "attack2_percentage": 94
+      }, {
+        "name": "marsanul",
+        "attack1": 3,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "The Gonz",
+        "attack1": 6,
+        "attack2": 4,
+        "attack1_stars": 1,
+        "attack2_stars": 3,
+        "attack1_percentage": 49,
+        "attack2_percentage": 100
+      }, {
+        "name": "D-Block",
+        "attack1": 5,
+        "attack2": 4,
+        "attack1_stars": 2,
+        "attack2_stars": 2,
+        "attack1_percentage": 82,
+        "attack2_percentage": 68
+      }, {
+        "name": "TheNewbenator",
+        "attack1": 9,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "OverLord",
+        "attack1": 8,
+        "attack2": null,
+        "attack1_stars": 1,
+        "attack2_stars": null,
+        "attack1_percentage": 100,
+        "attack2_percentage": null
+      }, {
+        "name": "jajay",
+        "attack1": 10,
+        "attack2": 4,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 96
+      }, {
+        "name": "jb_gamer",
+        "attack1": 9,
+        "attack2": 7,
+        "attack1_stars": 1,
+        "attack2_stars": 2,
+        "attack1_percentage": 30,
+        "attack2_percentage": 74
+      }, {
+        "name": "rob",
+        "attack1": 9,
+        "attack2": 6,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 66
+      }, {
+        "name": "Jeff",
+        "attack1": 9,
+        "attack2": 10,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }
+    ]
   }, {
     "size": 25,
     "opponent": "Lions",
     "date": "2016-03-04",
     "won": true, 
     "score": 70, 
-    "opponent_score": 50
+    "opponent_score": 50,
+    "destruction": 95,
+    "warMembers": [
+      {
+        "name": "STORM",
+        "attack1": 2,
+        "attack2": 1,
+        "attack1_stars": 3,
+        "attack2_stars": 2,
+        "attack1_percentage": 100,
+        "attack2_percentage": 94
+      }, {
+        "name": "marsanul",
+        "attack1": 3,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "The Gonz",
+        "attack1": 6,
+        "attack2": 4,
+        "attack1_stars": 1,
+        "attack2_stars": 3,
+        "attack1_percentage": 49,
+        "attack2_percentage": 100
+      }, {
+        "name": "D-Block",
+        "attack1": 5,
+        "attack2": 4,
+        "attack1_stars": 2,
+        "attack2_stars": 2,
+        "attack1_percentage": 82,
+        "attack2_percentage": 68
+      }, {
+        "name": "TheNewbenator",
+        "attack1": 9,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "OverLord",
+        "attack1": 8,
+        "attack2": null,
+        "attack1_stars": 1,
+        "attack2_stars": null,
+        "attack1_percentage": 100,
+        "attack2_percentage": null
+      }, {
+        "name": "jajay",
+        "attack1": 10,
+        "attack2": 4,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 96
+      }, {
+        "name": "jb_gamer",
+        "attack1": 9,
+        "attack2": 7,
+        "attack1_stars": 1,
+        "attack2_stars": 2,
+        "attack1_percentage": 30,
+        "attack2_percentage": 74
+      }, {
+        "name": "rob",
+        "attack1": 9,
+        "attack2": 6,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 66
+      }, {
+        "name": "Jeff",
+        "attack1": 9,
+        "attack2": 10,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }
+    ]
   }, {
     "size": 45,
     "opponent": "Lega Cristallo",
     "date": "2016-03-10",
     "won": false, 
     "score": 90, 
-    "opponent_score": 120
+    "opponent_score": 120,
+    "destruction": 80,
+    "warMembers": [
+      {
+        "name": "STORM",
+        "attack1": 2,
+        "attack2": 1,
+        "attack1_stars": 3,
+        "attack2_stars": 2,
+        "attack1_percentage": 100,
+        "attack2_percentage": 94
+      }, {
+        "name": "marsanul",
+        "attack1": 3,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "The Gonz",
+        "attack1": 6,
+        "attack2": 4,
+        "attack1_stars": 1,
+        "attack2_stars": 3,
+        "attack1_percentage": 49,
+        "attack2_percentage": 100
+      }, {
+        "name": "D-Block",
+        "attack1": 5,
+        "attack2": 4,
+        "attack1_stars": 2,
+        "attack2_stars": 2,
+        "attack1_percentage": 82,
+        "attack2_percentage": 68
+      }, {
+        "name": "TheNewbenator",
+        "attack1": 9,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "OverLord",
+        "attack1": 8,
+        "attack2": null,
+        "attack1_stars": 1,
+        "attack2_stars": null,
+        "attack1_percentage": 100,
+        "attack2_percentage": null
+      }, {
+        "name": "jajay",
+        "attack1": 10,
+        "attack2": 4,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 96
+      }, {
+        "name": "jb_gamer",
+        "attack1": 9,
+        "attack2": 7,
+        "attack1_stars": 1,
+        "attack2_stars": 2,
+        "attack1_percentage": 30,
+        "attack2_percentage": 74
+      }, {
+        "name": "rob",
+        "attack1": 9,
+        "attack2": 6,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 66
+      }, {
+        "name": "Jeff",
+        "attack1": 9,
+        "attack2": 10,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }
+    ]
   }, {
   	"size": 40,
   	"opponent": "CCCP",
   	"date": "2016-03-15",
     "won": true, 
     "score": 110, 
-    "opponent_score": 105
+    "opponent_score": 105,
+    "destruction": 96.5,
+    "warMembers": [
+      {
+        "name": "STORM",
+        "attack1": 2,
+        "attack2": 1,
+        "attack1_stars": 3,
+        "attack2_stars": 2,
+        "attack1_percentage": 100,
+        "attack2_percentage": 94
+      }, {
+        "name": "marsanul",
+        "attack1": 3,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "The Gonz",
+        "attack1": 6,
+        "attack2": 4,
+        "attack1_stars": 1,
+        "attack2_stars": 3,
+        "attack1_percentage": 49,
+        "attack2_percentage": 100
+      }, {
+        "name": "D-Block",
+        "attack1": 5,
+        "attack2": 4,
+        "attack1_stars": 2,
+        "attack2_stars": 2,
+        "attack1_percentage": 82,
+        "attack2_percentage": 68
+      }, {
+        "name": "TheNewbenator",
+        "attack1": 9,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "OverLord",
+        "attack1": 8,
+        "attack2": null,
+        "attack1_stars": 1,
+        "attack2_stars": null,
+        "attack1_percentage": 100,
+        "attack2_percentage": null
+      }, {
+        "name": "jajay",
+        "attack1": 10,
+        "attack2": 4,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 96
+      }, {
+        "name": "jb_gamer",
+        "attack1": 9,
+        "attack2": 7,
+        "attack1_stars": 1,
+        "attack2_stars": 2,
+        "attack1_percentage": 30,
+        "attack2_percentage": 74
+      }, {
+        "name": "rob",
+        "attack1": 9,
+        "attack2": 6,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 66
+      }, {
+        "name": "Jeff",
+        "attack1": 9,
+        "attack2": 10,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }
+    ]
   }, {
-  	"size": 30,
+  	"size": 10,
   	"opponent": "Dirty Rage",
   	"date": "2016-03-18",
-    "won": false, 
-    "score": 80, 
-    "opponent_score": 88
+    "won": true, 
+    "score": 27, 
+    "opponent_score": 25,
+    "destruction": 98.5,
+    "warMembers": [
+      {
+        "name": "STORM",
+        "attack1": 2,
+        "attack2": 1,
+        "attack1_stars": 3,
+        "attack2_stars": 2,
+        "attack1_percentage": 100,
+        "attack2_percentage": 94
+      }, {
+        "name": "marsanul",
+        "attack1": 3,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "The Gonz",
+        "attack1": 6,
+        "attack2": 4,
+        "attack1_stars": 1,
+        "attack2_stars": 3,
+        "attack1_percentage": 49,
+        "attack2_percentage": 100
+      }, {
+        "name": "D-Block",
+        "attack1": 5,
+        "attack2": 4,
+        "attack1_stars": 2,
+        "attack2_stars": 2,
+        "attack1_percentage": 82,
+        "attack2_percentage": 68
+      }, {
+        "name": "TheNewbenator",
+        "attack1": 9,
+        "attack2": 5,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }, {
+        "name": "OverLord",
+        "attack1": 8,
+        "attack2": null,
+        "attack1_stars": 1,
+        "attack2_stars": null,
+        "attack1_percentage": 100,
+        "attack2_percentage": null
+      }, {
+        "name": "jajay",
+        "attack1": 10,
+        "attack2": 4,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 96
+      }, {
+        "name": "jb_gamer",
+        "attack1": 9,
+        "attack2": 7,
+        "attack1_stars": 1,
+        "attack2_stars": 2,
+        "attack1_percentage": 30,
+        "attack2_percentage": 74
+      }, {
+        "name": "rob",
+        "attack1": 9,
+        "attack2": 6,
+        "attack1_stars": 3,
+        "attack2_stars": 1,
+        "attack1_percentage": 100,
+        "attack2_percentage": 66
+      }, {
+        "name": "Jeff",
+        "attack1": 9,
+        "attack2": 10,
+        "attack1_stars": 3,
+        "attack2_stars": 3,
+        "attack1_percentage": 100,
+        "attack2_percentage": 100
+      }
+    ]
   }
 ]

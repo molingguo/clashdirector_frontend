@@ -6,24 +6,15 @@
 }
 
 .login-wrapper {
-	width: 100%;
+	width: $login-block-width;
 	position: absolute;
 	top: 45%;
-	transform: translateY(-50%);
+	left: 50%;
+	transform: translate(-50%, -50%);
 
 	.login-logo {
 		width: 60%;
 		@include center-block;
-
-		@include small-screen-up {
-			width: 40%;
-		}
-		@include medium-screen-up {
-			width: 25%;
-		}
-		@include large-screen-up {
-			width: 20%;
-		}
 	}
 
 	.signup-tab, .login-tab {

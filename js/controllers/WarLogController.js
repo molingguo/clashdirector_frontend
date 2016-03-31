@@ -1,5 +1,8 @@
-app.controller('WarLogController', function($http, $scope, $location, wars, configure) {
+app.controller('WarLogController', function($http, $scope, $location, wars, configure, Auth) {
 	wars.setActiveLink("warlog");
+	$scope.isLeader = function() {
+		return Auth.isLeader();
+	}
 
 	$scope.clanName = "USA UNITED";
 	wars.getWars().success(function(data) {

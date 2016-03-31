@@ -31,40 +31,51 @@ a {
 	}
 }
 
-.modal-footer {
-	text-align: left;
-	padding: 8px 15px;
+.cancel-button {
+	@include cancel-button;
 }
 
-/*
-Sticky Modal Header and Footer for medium and large screen
- */
+.submit-button {
+	@include submit-button;
+}
+
+.reset-button {
+	@include reset-button;
+}
+
+.okay-button {
+	@include okay-button;
+}
+
+.modal-dialog {
+	button {
+		width: $modal-button-width;
+	}
+
+	.modal-confirmation-message {
+		line-height: 1.5;
+	}
+}
+
 @include medium-screen-up {
 
-	.modal-dialog {
-		height: calc(100% - 60px);
+	.body-for-sticky-bottom {
+		margin-bottom: $sticky-bottom-bar-height;
+		margin-top: 1rem;
 	}
 
-	.modal-content {
-		height: 100%;
-	}
-
-	.modal-header {
-		position: fixed;
-		width: 100%;
-		top: 0;
-	}
-
-	.modal-body {
-		height: calc(100% - #{$modal-header-height} - #{$modal-footer-height});
-		margin-top: $modal-header-height;
-		margin-bottom: $modal-footer-height;
-		overflow-y: scroll;
-	}
-
-	.modal-footer {
+	.sticky-bottom-bar {
+		background: white;
 		position: fixed;
 		bottom: 0;
-		width: 100%;
+		right: 0;
+		width: calc(100% - #{$sidebar-width});
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+		border-top: 1px solid $medium-light-gray;
 	}
+}
+
+.uib-datepicker-popup {
+	font-family: $body-font;
 }

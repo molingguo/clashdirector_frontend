@@ -17,9 +17,6 @@ app.factory('wars', function($http){
   wars.getWars = function() {
   	return $http.get("../../sampleWars.json");
   };
-  // wars.setWars = function(wars) {
-  //   wararrays = wars;
-  // }
 
   wars.getMembers = function() {
   	return $http.get("../../sample2.json");
@@ -28,7 +25,7 @@ app.factory('wars', function($http){
   /*
   Current War
    */
-  //var currentWar = {size: 15, isActive: true};
+  //var currentWar = {size: 15};
   var currentWar = null;
   wars.getCurrentWar = function() {
     return currentWar;
@@ -36,28 +33,73 @@ app.factory('wars', function($http){
   wars.setCurrentWar = function(war) {
     currentWar = war;
   }
+  wars.clearCurrentWar = function() {
+    currentWar = null;
+  }
 
   /*
   War Size
    */
-  var warSize = 10;
-  wars.getWarSize = function() {
-  	return warSize;
+  // var warSize = 10;
+  // wars.getWarSize = function() {
+  // 	return warSize;
+  // }
+  // wars.setWarSize = function(size) {
+  // 	warSize = size;
+  // }
+
+  /*
+  New War
+   */
+  var newWarDetailView = false;
+  wars.isNewWarDetailView = function() {
+    return newWarDetailView;
   }
-  wars.setWarSize = function(size) {
-  	warSize = size;
+  wars.setNewWarDetailView = function(toset) {
+    newWarDetailView = toset;
   }
 
   /*
-  War Members
+  Wars not recorded 
    */
-  var warMembers = [];
-  wars.getWarMembers = function() {
-  	return warMembers;
+  var notRecordedWars = [];
+  wars.getNotRecordedWars = function() {
+    return notRecordedWars;
   }
 
-  wars.setWarMembers = function(warmembers) {
-  	warMembers = warmembers;
+  wars.addNotRecordedWar = function(war) {
+    notRecordedWars.push(war);
+  }
+
+  /*
+  start new war after planner is active
+   */
+  wars.restartNewWar = function() {
+    //clear war members
+    warMembers.length = 0;
+    wars.clearCurrentWar();
+  }
+
+  /*
+  WAR PLANNER
+   */
+  var signUpViewMode = false;
+  var arrangementViewMode = false;
+
+  wars.getSignUpViewMode = function() {
+    return signUpViewMode;
+  }
+
+  wars.setSignUpViewMode = function(toset) {
+    signUpViewMode = toset;
+  }
+
+  wars.getArrangementViewMode = function() {
+    return arrangementViewMode;
+  }
+
+  wars.setArrangementViewMode = function(toset) {
+    arrangementViewMode = toset;
   }
 
   return wars;

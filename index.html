@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-	<title>Clash of Clans Tool</title>
+	<title>Clash Director</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
@@ -16,6 +16,7 @@
 	<script src="js/shared/ui-bootstrap-tpls-1.1.2.min.js"></script>
 	<script src="js/shared/underscore-min.js"></script>
 	<script src="js/shared/moment.js"></script>
+    <script src="js/shared/sortable.min.js"></script>
     <script src="js/shared/angular-dragdrop.min.js"></script>
 
      <!-- Favicons -->
@@ -39,12 +40,32 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body ng-controller="MainController">
-    <div ng-view autoscroll="true" ng-show="getActiveLink()=='login'"></div>
-	<div id="wrapper" ng-hide="getActiveLink()=='login'">
+    <div ng-view autoscroll="true" ng-if="getActiveLink()=='login'"></div>
+	<div id="wrapper" ng-if="getActiveLink()!='login'">
 	<!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
             	<img class="logo" src="img/logo.png" alt="">
+                <div uib-dropdown class="user-profile-wrapper">
+                    <div id="simple-dropdown" uib-dropdown-toggle>
+                        <div class="user-name-wrapper">
+                            <span class="glyphicon glyphicon-user"></span> {{getUser().name}}
+                            <span class="caret"></span>
+                        </div>
+                    </div>
+                    <ul uib-dropdown-menu aria-labelledby="simple-dropdown">
+                        <li>
+                            <a href>
+                                <span class="glyphicon glyphicon-cog"></span> Settings
+                            </a>
+                        </li>
+                        <li>
+                            <a href ng-click="logoutModal('sm')">
+                                <span class="glyphicon glyphicon-log-out"></span> Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
 <!--                 <li>
                     <a href="/">Dashboard</a>
                 </li> -->
@@ -57,9 +78,6 @@
                 <li>
                     <a ng-class="{active: getActiveLink()=='warlog'}" href="#/warlog">War Log</a>
                 </li>
-<!--                 <li>
-                    <a href="#">Settings</a>
-                </li> -->
             </ul>
         </div>
 
@@ -68,8 +86,6 @@
             <div class="container-fluid">
                 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
                 <div ng-view autoscroll="true"></div>
-                <div class="row">
-                </div>
             </div>
         </div>
 	</div>

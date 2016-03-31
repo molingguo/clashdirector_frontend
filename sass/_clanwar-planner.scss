@@ -1,3 +1,20 @@
+.clanwar-planner-wrapper {
+	margin-top: 1.5rem;
+	position: relative;
+}
+
+.action-buttons-wrapper {
+	position: absolute;
+	right: 0;
+	top: 1rem;
+
+	button {
+		font-size: 1rem;
+		height: 30px;
+    	margin-left: 0.5rem;
+	}
+}
+
 .planner-tabs {
 	margin-top: 1rem;
 
@@ -5,11 +22,6 @@
 		font-family: $header-font;
 		margin-bottom: 2rem;
 	}
-}
-
-.sign-up-title {
-	font-size: 2rem;
-	margin-bottom: 2rem;
 }
 
 .sign-up-list {
@@ -43,8 +55,11 @@
 
 	.signer-label {
 		@include text-ellipsis;
-		line-height: 28px;
-		height: 42px;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		background: white;
+		border: 1px solid $light-gray;
+		font-size: 1.4rem;
 		pointer-events: none;
 	}
 
@@ -59,21 +74,97 @@
 	min-height: 42px;
 }
 
-.arrange-labels {
-	line-height: 28px;
-	height: 42px;
-	font-size: 1.5rem;
+.arrange-label-list {
+	display: inline-block;
+	width: 32%;  //TODO: media query for width
 	font-family: $body-font;
-	@include text-ellipsis;
+	background: white;
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+	margin-right: 0.5rem;
+	border: 1px solid $light-gray;
+	font-size: 1.4rem;
+	position: relative;
+	@include noselect;
 
-	&.inactive {
-		pointer-events: none;
+	&:hover {
+		cursor: move;
+	}
+	
+	.arrange-label {
+		@include text-ellipsis;
+
+		&.inactive {
+			pointer-events: none;
+		}
+	}
+
+	.draggable-icon {
+		position: absolute;
+		color: $gray;
+		top: 0;
+		left: 0;
+		border-right: 1px solid #ddd;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		padding-left: 0.1rem;
+		background: #fdfdfd;
+	}
+
+	.removable-icon {
+		position: absolute;
+		color: $dark-gray;
+		top: 0;
+		right: 0;
+		border-left: 1px solid #ddd;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		padding-left: 0.5rem;
+    	padding-right: 0.5rem;
+
+		&:hover {
+			cursor: pointer;
+			background: $light-gray;
+		}
 	}
 }
 
-.waitinglist-label {
-	@include text-ellipsis;
-	width: 100%;
+.waiting-list-title {
+	margin-bottom: 2.7rem;
+}
+
+.waitinglist-label-list {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	padding-left: 1.5rem;
+	margin-bottom: 0.25rem;
+	border: 1px solid $light-gray;
+	font-size: 1.4rem;
+	position: relative;
+	@include noselect;
+
+	&:hover {
+		cursor: move;
+	}
+
+	.draggable-icon {
+		position: absolute;
+		color: $gray;
+		top: 0;
+		left: 0;
+		border-right: 1px solid #ddd;
+		padding-top: 0.75rem;
+		padding-bottom: 0.75rem;
+		padding-left: 0.1rem;
+		padding-right: 0.1rem;
+		background: #fdfdfd;
+	}
+
+	.waitinglist-label {
+		@include text-ellipsis;
+	}
 }
 
 .arrange-remove-button {
@@ -87,14 +178,6 @@
 		cursor: pointer;
 		color: $link-color-hover;
 	}
-}
-
-.cancel-button {
-	@include cancel-button;
-}
-
-.submit-button {
-	@include submit-button;
 }
 
 .action-buttons {

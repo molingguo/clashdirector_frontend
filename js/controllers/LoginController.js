@@ -9,13 +9,24 @@ app.controller('LoginController', function($http, $scope, $location, wars, confi
 		return;
 	}
 
+	$scope.loginInfo = {
+		username: '',
+		password: ''
+	};
+
 	$scope.signUp = function() {
-		Auth.setUser("register");
+		Auth.setSampleLeader();
 		$location.path('claninfo');
 	}
 
-	$scope.login = function() {
-		Auth.setUser("login");
-		$location.path('claninfo');
+	$scope.logIn = function() {
+		var user = Auth.checkLogin($scope.loginInfo.username);
+		if (user) {
+			Auth.setUser(user);
+			console.log("logged in");
+			$location.path('claninfo');
+		} else {
+			alert("user doesn't exist!");
+		}
 	}
 });

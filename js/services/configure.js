@@ -11,10 +11,21 @@ app.factory('configure', function(){
 	};
 
   configure.planner = {
+    newwarMessage: {
+      leader: "Ready?",
+      member: "Ready to begin? Ask a clan leader to start a war"
+    },
   	header: {
   		signup: "Choose Targets",
   		arrange: "Arrangement"
   	}
+  }
+
+  configure.modalDialog = {
+    confirmation: "Confirmation", 
+    cancelMessage: "Do you really want to discard your changes?",
+    logoutMessage: "Do you really want to log out?",
+    startNewWarMessage: "Do you really want to start a new war?"
   }
 
   return configure;

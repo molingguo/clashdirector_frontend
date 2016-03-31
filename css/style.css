@@ -28,35 +28,88 @@ a {
     #menu-toggle {
       display: none; } }
 
-.modal-footer {
-  text-align: left;
-  padding: 8px 15px; }
+.cancel-button {
+  font-family: "supercell-magic", Arial, sans-serif;
+  color: white;
+  border: none;
+  height: 3.8rem;
+  background: #999999; }
+  .cancel-button:hover, .cancel-button:focus {
+    color: white;
+    outline: none; }
+  .cancel-button:hover, .cancel-button:focus {
+    background: #666666; }
 
-/*
-Sticky Modal Header and Footer for medium and large screen
- */
+.submit-button {
+  font-family: "supercell-magic", Arial, sans-serif;
+  color: white;
+  border: none;
+  height: 3.8rem;
+  background: #F27935; }
+  .submit-button:hover, .submit-button:focus {
+    color: white;
+    outline: none; }
+  .submit-button:hover, .submit-button:focus {
+    background: #F9690E; }
+  .submit-button.inactive, .submit-button:disabled {
+    background: #666666;
+    pointer-events: none;
+    opacity: 0.8; }
+
+.reset-button {
+  font-family: "supercell-magic", Arial, sans-serif;
+  color: white;
+  border: none;
+  height: 3.8rem;
+  background: #f15e4e; }
+  .reset-button:hover, .reset-button:focus {
+    color: white;
+    outline: none; }
+  .reset-button:hover, .reset-button:focus {
+    background: #EF4836; }
+  .reset-button.inactive, .reset-button:disabled {
+    background: #666666;
+    pointer-events: none;
+    opacity: 0.8; }
+
+.okay-button {
+  font-family: "supercell-magic", Arial, sans-serif;
+  color: white;
+  border: none;
+  height: 3.8rem;
+  background: #79d2a6; }
+  .okay-button:hover, .okay-button:focus {
+    color: white;
+    outline: none; }
+  .okay-button:hover, .okay-button:focus {
+    background: #66CC99; }
+  .okay-button.inactive, .okay-button:disabled {
+    background: #666666;
+    pointer-events: none;
+    opacity: 0.8; }
+
+.modal-dialog button {
+  width: 10rem; }
+.modal-dialog .modal-confirmation-message {
+  line-height: 1.5; }
+
 @media (min-width: 992px) {
-  .modal-dialog {
-    height: calc(100% - 60px); }
-
-  .modal-content {
-    height: 100%; }
-
-  .modal-header {
-    position: fixed;
-    width: 100%;
-    top: 0; }
-
-  .modal-body {
-    height: calc(100% - 51px - 56px);
-    margin-top: 51px;
+  .body-for-sticky-bottom {
     margin-bottom: 56px;
-    overflow-y: scroll; }
+    margin-top: 1rem; }
 
-  .modal-footer {
+  .sticky-bottom-bar {
+    background: white;
     position: fixed;
     bottom: 0;
-    width: 100%; } }
+    right: 0;
+    width: calc(100% - 250px);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-top: 1px solid #bbbbbb; } }
+.uib-datepicker-popup {
+  font-family: Arial, sans-serif; }
+
 .fullscreen-wrapper {
   width: 100%;
   height: 100vh;
@@ -183,6 +236,46 @@ Sticky Modal Header and Footer for medium and large screen
   top: 0;
   left: 0; }
 
+.user-profile-wrapper {
+  font-size: 1.6rem;
+  margin-bottom: 2rem; }
+  .user-profile-wrapper #simple-dropdown {
+    padding: 2rem 3rem;
+    background: #333333;
+    color: white; }
+    .user-profile-wrapper #simple-dropdown:hover {
+      background: #666666;
+      cursor: pointer; }
+  .user-profile-wrapper .dropdown-menu {
+    min-width: 0;
+    width: 250px;
+    background: #333333;
+    border-radius: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: Arial, sans-serif; }
+    .user-profile-wrapper .dropdown-menu > li a {
+      font-size: 1.6rem;
+      font-family: Arial, sans-serif;
+      padding: 1rem 3rem; }
+      .user-profile-wrapper .dropdown-menu > li a:hover {
+        background: #666666;
+        color: white; }
+  .user-profile-wrapper .user-name-wrapper {
+    position: relative;
+    max-width: 20rem;
+    padding-right: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+  .user-profile-wrapper .caret {
+    position: absolute;
+    right: 0;
+    top: 0.75rem;
+    border-top: 6px dashed;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent; }
+
 .clan-info-header {
   margin-top: 3rem; }
 
@@ -261,31 +354,11 @@ Sticky Modal Header and Footer for medium and large screen
     .member-list .member-rank, .member-list .member-trophies {
       line-height: 37px; } }
 
+/*
+LARGE START WAR BUTTON PAGE
+ */
 .start-war-section {
-  margin-top: 10rem; }
-
-.opponent-clan {
-  margin-top: 1rem; }
-
-.start-war-button {
-  font-family: "supercell-magic", Arial, sans-serif;
-  background: #F27935;
-  color: white;
-  width: 11rem;
-  font-size: 1.8rem; }
-  .start-war-button.inactive {
-    background: #999999;
-    pointer-events: none; }
-  .start-war-button:hover, .start-war-button:focus {
-    background: #F9690E;
-    outline: none;
-    color: white; }
-
-.quit-x-button {
-  font-size: 2.5rem;
-  position: absolute;
-  right: 1.5rem;
-  top: 1rem; }
+  margin-top: 15rem; }
 
 .start-war-button-large {
   margin-top: 2rem;
@@ -302,12 +375,30 @@ Sticky Modal Header and Footer for medium and large screen
   .start-war-button-large img {
     width: 4.8rem; }
 
+.member-view h2 {
+  line-height: 1.5; }
+
+/*
+START NEW WAR PAGE
+ */
+.start-new-war-header {
+  margin-top: 3rem; }
+
+.start-war-action-buttons button {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-left: 1rem; }
+
+.war-basic-settings {
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
 #war-size-button {
   color: white;
   background: #66CC99;
-  width: 11rem;
   padding: 0.5rem 1.5rem;
-  font-size: 1.7rem; }
+  font-size: 1.7rem;
+  font-family: Arial, sans-serif; }
   #war-size-button .caret {
     border-top: 5px dashed;
     border-right: 5px solid transparent;
@@ -316,9 +407,9 @@ Sticky Modal Header and Footer for medium and large screen
 .war-size-dropdown {
   background: #66CC99;
   color: white;
-  width: 11rem;
   min-width: 11rem;
-  padding: 0; }
+  padding: 0;
+  font-family: Arial, sans-serif; }
   .war-size-dropdown li {
     padding: 0.5rem 1.5rem;
     font-size: 1.7rem; }
@@ -326,36 +417,92 @@ Sticky Modal Header and Footer for medium and large screen
       background: #40bf80;
       cursor: pointer; }
 
-.select-participants {
-  margin-top: 1rem; }
-  .select-participants .in-out-war-button {
-    width: 11rem;
-    background: #EF4836;
-    color: white;
-    font-size: 1.6rem;
+.select-participants .in-out-war-button {
+  width: 11rem;
+  background: #EF4836;
+  color: white;
+  font-size: 1.5rem;
+  font-family: "supercell-magic", Arial, sans-serif;
+  padding: 5px 12px; }
+  .select-participants .in-out-war-button.in-war {
+    background: #66CC99; }
+  .select-participants .in-out-war-button:hover, .select-participants .in-out-war-button:focus {
+    outline: none; }
+.select-participants .participants-list > li {
+  padding: 0.5rem 0;
+  margin: 0.1rem 0;
+  background: #f3f3f3;
+  line-height: 33px; }
+  .select-participants .participants-list > li .participant-name {
+    font-size: 1.5rem;
     font-family: "supercell-magic", Arial, sans-serif; }
-    .select-participants .in-out-war-button.in-war {
-      background: #66CC99; }
-    .select-participants .in-out-war-button:hover, .select-participants .in-out-war-button:focus {
-      outline: none; }
-  .select-participants .participants-list > li {
-    padding: 0.5rem 0;
-    margin: 0.1rem 0;
-    background: #f3f3f3;
-    line-height: 36px; }
-    .select-participants .participants-list > li .participant-name, .select-participants .participants-list > li .participant-index, .select-participants .participants-list > li .participant-war-position {
-      font-size: 1.5rem;
-      font-family: "supercell-magic", Arial, sans-serif; }
+
+.selection-list-wrapper .selection-list-draggable {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-right: 3rem;
+  padding-left: 1.5rem;
+  margin-bottom: 0.25rem;
+  border: 1px solid #dddddd;
+  font-size: 1.5rem;
+  position: relative;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE/Edge */
+  user-select: none;
+  /* non-prefixed version, currently not supported by any browser */ }
+  .selection-list-wrapper .selection-list-draggable:hover {
+    cursor: move; }
+  .selection-list-wrapper .selection-list-draggable .draggable-icon {
+    position: absolute;
+    color: #666666;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #ddd;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    background: #fdfdfd; }
+  .selection-list-wrapper .selection-list-draggable .removable-icon {
+    position: absolute;
+    color: #666666;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #ddd;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 1rem; }
+    .selection-list-wrapper .selection-list-draggable .removable-icon:hover {
+      cursor: pointer;
+      background: #dddddd; }
+
+.clanwar-planner-wrapper {
+  margin-top: 1.5rem;
+  position: relative; }
+
+.action-buttons-wrapper {
+  position: absolute;
+  right: 0;
+  top: 1rem; }
+  .action-buttons-wrapper button {
+    font-size: 1rem;
+    height: 30px;
+    margin-left: 0.5rem; }
 
 .planner-tabs {
   margin-top: 1rem; }
   .planner-tabs .nav-tabs {
     font-family: "supercell-magic", Arial, sans-serif;
     margin-bottom: 2rem; }
-
-.sign-up-title {
-  font-size: 2rem;
-  margin-bottom: 2rem; }
 
 .sign-up-list > li {
   padding: 0.5rem 0;
@@ -380,8 +527,11 @@ Sticky Modal Header and Footer for medium and large screen
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 28px;
-    height: 42px;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    background: white;
+    border: 1px solid #dddddd;
+    font-size: 1.4rem;
     pointer-events: none; }
   .current-signer-list.contains-current .signer-label:last-child {
     color: #F9690E; }
@@ -389,22 +539,103 @@ Sticky Modal Header and Footer for medium and large screen
 .arrange-drop-list {
   min-height: 42px; }
 
-.arrange-labels {
-  line-height: 28px;
-  height: 42px;
-  font-size: 1.5rem;
+.arrange-label-list {
+  display: inline-block;
+  width: 32%;
   font-family: Arial, sans-serif;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
-  .arrange-labels.inactive {
-    pointer-events: none; }
+  background: white;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid #dddddd;
+  font-size: 1.4rem;
+  position: relative;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE/Edge */
+  user-select: none;
+  /* non-prefixed version, currently not supported by any browser */ }
+  .arrange-label-list:hover {
+    cursor: move; }
+  .arrange-label-list .arrange-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
+    .arrange-label-list .arrange-label.inactive {
+      pointer-events: none; }
+  .arrange-label-list .draggable-icon {
+    position: absolute;
+    color: #999999;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #ddd;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.1rem;
+    background: #fdfdfd; }
+  .arrange-label-list .removable-icon {
+    position: absolute;
+    color: #666666;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #ddd;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem; }
+    .arrange-label-list .removable-icon:hover {
+      cursor: pointer;
+      background: #dddddd; }
 
-.waitinglist-label {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 100%; }
+.waiting-list-title {
+  margin-bottom: 2.7rem; }
+
+.waitinglist-label-list {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  margin-bottom: 0.25rem;
+  border: 1px solid #dddddd;
+  font-size: 1.4rem;
+  position: relative;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  -khtml-user-select: none;
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE/Edge */
+  user-select: none;
+  /* non-prefixed version, currently not supported by any browser */ }
+  .waitinglist-label-list:hover {
+    cursor: move; }
+  .waitinglist-label-list .draggable-icon {
+    position: absolute;
+    color: #999999;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #ddd;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    background: #fdfdfd; }
+  .waitinglist-label-list .waitinglist-label {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 .arrange-remove-button {
   position: absolute;
@@ -416,39 +647,45 @@ Sticky Modal Header and Footer for medium and large screen
     cursor: pointer;
     color: #23527c; }
 
-.cancel-button {
-  font-family: "supercell-magic", Arial, sans-serif;
-  background: #999999;
-  color: white;
-  border: none;
-  height: 3.8rem; }
-  .cancel-button:hover, .cancel-button:focus {
-    background: #666666;
-    color: white;
-    outline: none; }
-
-.submit-button {
-  font-family: "supercell-magic", Arial, sans-serif;
-  background: #F27935;
-  color: white;
-  border: none;
-  height: 3.8rem; }
-  .submit-button:hover, .submit-button:focus {
-    background: #F9690E;
-    color: white;
-    outline: none; }
-  .submit-button.inactive {
-    background: #666666;
-    pointer-events: none; }
-
 .action-buttons {
   margin-bottom: 2rem; }
+
+.war-details-wrapper input.ng-invalid {
+  outline: 1px solid #EF4836; }
 
 .war-log-header {
   margin-top: 3rem;
   margin-bottom: 3rem;
   font-size: 2.4rem;
   font-family: "supercell-magic", Arial, sans-serif; }
+
+.war-log-add-button {
+  font-size: 5rem;
+  top: 1.75rem;
+  padding-right: 8.5rem;
+  color: #F27935; }
+  .war-log-add-button:hover {
+    cursor: pointer;
+    color: #F9690E; }
+
+.button-actions-wrapper.edit-button-wrapper {
+  position: absolute;
+  right: 7.75rem;
+  bottom: 1rem; }
+.button-actions-wrapper button {
+  padding-left: 3rem;
+  padding-right: 3rem; }
+
+.clan-edit-header {
+  margin-bottom: 2rem;
+  color: #F9690E;
+  font-size: 2rem; }
+
+.your-clan-name {
+  line-height: 3.4rem; }
+
+.extra-edit-field {
+  margin-bottom: 2rem; }
 
 .warlog-list-wrapper .warlog-list {
   background: #f8b4ac;
@@ -501,6 +738,7 @@ Sticky Modal Header and Footer for medium and large screen
   font-size: 2.2rem; }
 .details-header-section .details-clan-score {
   margin-top: 2rem;
+  margin-bottom: 2rem;
   font-size: 5rem; }
 
 .war-result-text {
@@ -517,5 +755,30 @@ Sticky Modal Header and Footer for medium and large screen
   .war-details-list-wrapper .war-details-list .war-stars img {
     width: 50%;
     margin-top: -0.6rem; }
+.war-details-list-wrapper .btn-group-stars {
+  width: 100%;
+  margin-top: -0.75rem; }
+.war-details-list-wrapper #stars-dropdown, .war-details-list-wrapper .stars-dropdown-wrapper {
+  min-width: 0;
+  width: 100%; }
+  .war-details-list-wrapper #stars-dropdown img, .war-details-list-wrapper .stars-dropdown-wrapper img {
+    width: 6rem; }
+.war-details-list-wrapper #stars-dropdown {
+  text-align: left; }
+  .war-details-list-wrapper #stars-dropdown .caret {
+    margin-left: 0.5rem;
+    border-top: 5px dashed;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent; }
+.war-details-list-wrapper .stars-dropdown-wrapper > li a {
+  padding-left: 1.2rem; }
+.war-details-list-wrapper .edit-target-dropdown {
+  min-width: 0;
+  width: 100%; }
+  .war-details-list-wrapper .edit-target-dropdown > li a {
+    padding-left: 0;
+    padding-right: 0; }
+.war-details-list-wrapper .attack-header-edit {
+  margin-bottom: 1rem; }
 
 /*# sourceMappingURL=style.css.map */

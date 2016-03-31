@@ -1,8 +1,56 @@
+.war-details-wrapper {
+	input {
+		&.ng-invalid {
+			outline: 1px solid $red;
+		}
+	}
+}
+
 .war-log-header {
 	margin-top: 3rem;
 	margin-bottom: 3rem;
 	font-size: 2.4rem;
 	font-family: $header-font;
+}
+
+.war-log-add-button {
+	font-size: 5rem;
+	top: 1.75rem;
+    padding-right: 8.5rem;
+    color: $light-orange;
+
+    &:hover {
+    	cursor: pointer;
+    	color: $orange;
+    }
+}
+
+.button-actions-wrapper {
+
+	&.edit-button-wrapper {
+		position: absolute;
+		right: 7.75rem;
+		bottom: 1rem;
+	}
+	
+    button {
+    	padding-left: 3rem;
+    	padding-right: 3rem;
+    }
+}
+
+.clan-edit-header {
+	margin-bottom: 2rem;
+    color: $orange;
+    font-size: 2rem;
+}
+
+.your-clan-name {
+	line-height: 3.4rem;
+}
+
+.extra-edit-field {
+	margin-bottom: 2rem;
 }
 
 .warlog-list-wrapper {
@@ -85,6 +133,7 @@
 
 	.details-clan-score {
 		margin-top: 2rem;
+		margin-bottom: 2rem;
 		font-size: 5rem;
 	}
 }
@@ -111,5 +160,47 @@
 				margin-top: -0.6rem;
 			}
 		}
+	}
+
+	.btn-group-stars {
+		width: 100%;
+		margin-top: -0.75rem;
+	}
+
+	#stars-dropdown, .stars-dropdown-wrapper {
+		min-width: 0;
+		width: 100%;
+
+		img {
+			width: 6rem;
+		}
+	}
+
+	#stars-dropdown {
+		text-align: left;
+		.caret {
+			margin-left: 0.5rem;
+			@include medium-caret;
+		}
+	}
+
+	.stars-dropdown-wrapper {
+		> li a {
+			padding-left: 1.2rem;
+		}
+	}
+
+	.edit-target-dropdown {
+		min-width: 0;
+    	width: 100%;
+
+    	> li a {
+    		padding-left: 0;
+    		padding-right: 0;
+    	}
+	}
+
+	.attack-header-edit {
+		margin-bottom: 1rem;
 	}
 }

@@ -1,7 +1,7 @@
 
 //Global CONSTANTS
 
-var app = angular.module('clashDirector',['ngRoute', 'ui.bootstrap', 'ngDragDrop']);
+var app = angular.module('clashDirector',['ngRoute', 'ui.bootstrap', 'ngDragDrop', 'ui.sortable']);
 
 app.config(['$routeProvider', '$httpProvider', '$locationProvider', 
   function($routeProvider, $httpProvider, $locationProvider) {

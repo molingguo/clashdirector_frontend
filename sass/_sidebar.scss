@@ -76,7 +76,6 @@
     }
 }
 
-
 @media(min-width:768px) {
     #wrapper {
         padding-left: $sidebar-width;
@@ -109,4 +108,55 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.user-profile-wrapper {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+
+    #simple-dropdown {
+        padding: 2rem 3rem;
+        background: $very-dark-gray;
+        color: white;
+
+        &:hover {
+            background: $dark-gray;
+            cursor: pointer;
+        }
+    }
+
+    .dropdown-menu {
+        min-width: 0;
+        width: $sidebar-width;
+        background: $very-dark-gray;
+        border-radius: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        font-family: $body-font;
+
+        >li a {
+            font-size: 1.6rem;
+            font-family: $body-font;
+            padding: 1rem 3rem;
+
+            &:hover {
+                background: $dark-gray;
+                color: white;
+            }
+        }
+    }
+
+    .user-name-wrapper {
+        position: relative;
+        max-width: 20rem;
+        padding-right: 2rem;
+        @include text-ellipsis;
+    }
+
+    .caret {
+        position: absolute;
+        right: 0;
+        top: 0.75rem;
+        @include large-caret;
+    }
 }

@@ -6,6 +6,7 @@
     "score": 80, 
     "opponent_score": 88,
     "destruction": 90,
+    "opponent_destruction": 95,
     "warMembers": [
       {
         "name": "STORM",
@@ -97,6 +98,7 @@
     "score": 70, 
     "opponent_score": 50,
     "destruction": 95,
+    "opponent_destruction": 76,
     "warMembers": [
       {
         "name": "STORM",
@@ -188,6 +190,7 @@
     "score": 90, 
     "opponent_score": 120,
     "destruction": 80,
+    "opponent_destruction": 98.3,
     "warMembers": [
       {
         "name": "STORM",
@@ -279,6 +282,7 @@
     "score": 110, 
     "opponent_score": 105,
     "destruction": 96.5,
+    "opponent_destruction": 93.4,
     "warMembers": [
       {
         "name": "STORM",
@@ -370,6 +374,7 @@
     "score": 27, 
     "opponent_score": 25,
     "destruction": 98.5,
+    "opponent_destruction": 95,
     "warMembers": [
       {
         "name": "STORM",

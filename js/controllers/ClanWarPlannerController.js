@@ -1,20 +1,31 @@
-app.controller('ClanWarPlannerController', function($http, $scope, $location, wars, configure) {
+app.controller('ClanWarPlannerController', function($http, $scope, $location, $uibModal, $log, wars, configure, Auth) {
 	wars.setActiveLink("clanwar");
-
 	if (!wars.getCurrentWar()) {
 		$location.path('clanwar');
 		return;
 	}
+
+	/*
+	Initialize
+	 */
+	$scope.isLeader = function() {
+		return Auth.isLeader();
+	}
 	$scope.planner = configure.planner;
 	$scope.warSize = wars.getCurrentWar().size;
-	$scope.warMembers = wars.getWarMembers();
-	
-	//Suppose current user is the first war member
-	$scope.currentUser = $scope.warMembers[0];
+	$scope.currentUser = Auth.getUser();
 	$scope.selectTargets = [];
-	$scope.viewMode = false;
+	$scope.viewMode = function() {
+		return wars.getSignUpViewMode();
+	}
+	$scope.submitSignUp = function() {
+		wars.setSignUpViewMode(true);
+	}
+	$scope.editSignUp = function() {
+		wars.setSignUpViewMode(false);
+	}
 	$scope.arrangeViewMode = false;
-
+	
 	var arrangementList = function() {
 		var list = [];
 		for (i = 0; i < $scope.warSize; i++) {
@@ -22,7 +33,6 @@ app.controller('ClanWarPlannerController', function($http, $scope, $location, wa
 		}
 		return list;
 	}
-	$scope.arrangementList = arrangementList();
 
 	//Create an temporary signer list (randomly for prototyping)
 	var createSignList = function() {
@@ -47,23 +57,23 @@ app.controller('ClanWarPlannerController', function($http, $scope, $location, wa
 		}
 		return list;
 	}
+	//$scope.warMembers = wars.getWarMembers();
+	$scope.warMembers = wars.getCurrentWar().warMembers;
 	$scope.signerList = createSignList();
 	$scope.arrangementList = $scope.signerList;
 	$scope.waitingList = $scope.warMembers;
-	// $scope.waitingList = [
-	// 	{"title": 'Chieh Lee', 'drag': true}, 
-	// 	{"title": 'Moling Guo', 'drag': true}, 
-	// 	{"title": 'Xiang Fan', 'drag': true}, 
-	// 	{"title": 'Alfred Song', 'drag': true}, 
-	// 	{"title": 'Starin Wang', 'drag': true}, 
-	// 	{"title": 'Chieh Lee', 'drag': true}, 
-	// 	{"title": 'Chieh Lee', 'drag': true}, 
-	// 	{"title": 'Chieh Lee', 'drag': true}, 
-	// 	{"title": 'Chieh Lee', 'drag': true}, 
-	// 	{"title": 'Chieh Lee', 'drag': true}, 
-	// 	{"title": 'Chieh Lee', 'drag': true}, 
-	// 	{"title": 'Chieh Lee', 'drag': true}
-	// ];
+
+	/*
+	For Development Use, skip the start war part
+	 */
+	// wars.getMembers().success(function(data) {
+	// 	var members = data.clanDetails.results.memberList;
+	// 	$scope.warMembers = members.slice(0, 15);
+	// 	console.log($scope.warMembers);
+	// 	$scope.signerList = createSignList();
+	// 	$scope.arrangementList = $scope.signerList;
+	// 	$scope.waitingList = $scope.warMembers;
+	// });
 
 	/*
 	TODO: Check Duplicates
@@ -124,5 +134,35 @@ app.controller('ClanWarPlannerController', function($http, $scope, $location, wa
 		$scope.arrangementList[arrayindex].splice(index, 1);  
 		$scope.waitingList.push(item);
 	}
+
+	$scope.startNewWar = function() {
+		wars.addNotRecordedWar(wars.getCurrentWar());
+		wars.clearCurrentWar();
+		wars.setNewWarDetailView(false);
+		$location.path('clanwar');
+	}
+
+	$scope.startNewWarModal = function (size) {
+		var modalInstance = $uibModal.open({
+			animation: true,
+			templateUrl: 'partials/_confirmCancel.html',
+			controller: 'ModalController',
+			size: size,
+			resolve: {
+				messageHeader: function() {
+					return configure.modalDialog.confirmation;
+				},
+				message: function () {
+					return configure.modalDialog.startNewWarMessage;
+				}
+			}
+		});
+
+		modalInstance.result.then(function () {
+			$scope.startNewWar();
+		}, function () {
+			$log.info('Modal dismissed at: ' + new Date());
+		});
+	};
 
 });

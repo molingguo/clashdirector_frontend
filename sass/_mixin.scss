@@ -45,35 +45,77 @@
 	text-overflow: ellipsis;
 }
 
-@mixin cancel-button {
+@mixin noselect {
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-khtml-user-select: none;    /* Konqueror */
+	-moz-user-select: none;      /* Firefox */
+	-ms-user-select: none;       /* IE/Edge */
+  	user-select: none;           /* non-prefixed version, currently not supported by any browser */
+}
+
+@mixin general-button {
 	font-family: $header-font;
-	background: $gray;
 	color: white;
 	border: none;
 	height: $general-button-height;
 
 	&:hover, &:focus {
-    	background: $dark-gray;;
-    	color: white;
+		color: white;
     	outline: none;
+	}
+}
+
+@mixin cancel-button {
+	@include general-button;
+	background: $gray;
+
+	&:hover, &:focus {
+    	background: $dark-gray;;
+    }
+}
+
+@mixin reset-button {
+	@include general-button;
+	background: lighten($red, 5%);
+
+	&:hover, &:focus {
+		background: $red;
+	}
+
+	&.inactive, &:disabled {
+    	background: $dark-gray;
+    	pointer-events: none;
+    	opacity: 0.8;
     }
 }
 
 @mixin submit-button {
-	font-family: $header-font;
+	@include general-button;
 	background: $light-orange;
-	color: white;
-	border: none;
-	height: $general-button-height;
 
 	&:hover, &:focus {
     	background: $orange;
-    	color: white;
-    	outline: none;
     }
 
-    &.inactive {
+    &.inactive, &:disabled {
     	background: $dark-gray;
     	pointer-events: none;
+    	opacity: 0.8;
+    }
+}
+
+@mixin okay-button {
+	@include general-button;
+	background: lighten($green, 5%);
+
+	&:hover, &:focus {
+    	background: $green;
+    }
+
+    &.inactive, &:disabled {
+    	background: $dark-gray;
+    	pointer-events: none;
+    	opacity: 0.8;
     }
 }

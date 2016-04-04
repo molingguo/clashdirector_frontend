@@ -3,9 +3,9 @@
 		<button class="btn btn-default submit-button" ng-click="startNewWarModal('sm')">
 			Start New War
 		</button>
-		<button class="btn btn-default okay-button">
+<!-- 		<button class="btn btn-default okay-button">
 			Record Result
-		</button>
+		</button> -->
 	</div>
 	<uib-tabset active="active" class="planner-tabs">
 		<uib-tab index="0" heading="{{planner.header.signup}}">
@@ -18,7 +18,7 @@
 			<div class="col-xs-3 text-center">
 				<h5>Your Targets</h5>
 			</div>
-			<ul class="col-xs-12 sign-up-list">
+			<ul class="col-xs-12 sign-up-list body-for-sticky-bottom">
 			    <li ng-repeat="index in range(0, warSize)" class="row">
 			    	<div class="col-xs-2 text-center opponent-index">
 			    		{{index+1}}
@@ -34,13 +34,13 @@
 			    	</div>
 			    </li>
 			</ul>
-			<div class="col-xs-4 col-xs-offset-8 action-buttons">
-				<div class="row" ng-hide="viewMode()">
-					<button class="btn btn-default col-xs-6 cancel-button" ng-click="clearAllTargets()">Clear</button>
-					<button class="btn btn-default col-xs-6 submit-button" ng-class="{'inactive':selectTargets.length<1}" ng-click="submitSignUp()">Submit</button>
+			<div class="col-xs-12 text-right action-buttons sticky-bottom-bar">
+				<div class="text-right" ng-hide="viewMode()">
+					<button class="btn btn-default cancel-button" ng-click="clearAllTargets()">Clear</button>
+					<button class="btn btn-default submit-button" ng-class="{'inactive':selectTargets.length<1}" ng-click="submitSignUp()">Submit</button>
 				</div>
-				<div class="row" ng-show="viewMode()">
-					<button class="btn btn-default col-xs-6 col-xs-offset-6 submit-button" ng-click="editSignUp()">Edit</button>
+				<div class="text-right" ng-show="viewMode()">
+					<button class="btn btn-default submit-button" ng-click="editSignUp()">Edit</button>
 				</div>
 			</div>
 		</uib-tab>
@@ -53,7 +53,7 @@
 				<div class="col-xs-10 text-center">
 					<h5>Arrangement</h5>
 				</div>
-				<ul class="col-xs-12 sign-up-list">
+				<ul class="col-xs-12 sign-up-list body-for-sticky-bottom">
 					<li ng-repeat="index in range(0, warSize)" class="row">
 						<div class="col-xs-2 text-center opponent-index">
 			    		{{index+1}}
@@ -93,13 +93,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-4 col-xs-offset-8 action-buttons">
-			<div ng-hide="arrangeViewMode">
-				<button class="btn btn-default col-xs-6 cancel-button">Cancel</button>
-				<button class="btn btn-default col-xs-6 submit-button" ng-click="arrangeViewMode=true">Submit</button>
+		<div class="col-xs-12 action-buttons sticky-bottom-bar">
+			<div ng-hide="arrangeViewMode" class="text-right">
+				<button class="btn btn-default cancel-button" ng-click="arrangeViewMode=true">Cancel</button>
+				<button class="btn btn-default submit-button" ng-click="arrangeViewMode=true">Submit</button>
 			</div>
-			<div ng-show="arrangeViewMode">
-				<button class="btn btn-default col-xs-6 col-xs-offset-6 submit-button" ng-click="arrangeViewMode=false">Edit</button>
+			<div ng-show="arrangeViewMode" class="text-right">
+				<button class="btn btn-default submit-button" ng-click="arrangeViewMode=false">Edit</button>
 			</div>
 		</div>
 		</uib-tab>

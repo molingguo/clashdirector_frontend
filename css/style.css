@@ -647,8 +647,8 @@ START NEW WAR PAGE
     cursor: pointer;
     color: #23527c; }
 
-.action-buttons {
-  margin-bottom: 2rem; }
+.action-buttons button {
+  width: 12rem; }
 
 .war-details-wrapper input.ng-invalid {
   outline: 1px solid #EF4836; }
@@ -709,6 +709,16 @@ START NEW WAR PAGE
     left: 3rem;
     color: #666666;
     font-size: 1.2rem; }
+
+.war-details-back-button a {
+  display: block;
+  position: absolute;
+  top: 1rem;
+  font-size: 4rem;
+  color: #F27935;
+  z-index: 99; }
+  .war-details-back-button a:hover {
+    color: #F9690E; }
 
 .war-details-header {
   font-family: "supercell-magic", Arial, sans-serif;

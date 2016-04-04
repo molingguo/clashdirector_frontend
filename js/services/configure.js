@@ -12,7 +12,7 @@ app.factory('configure', function(){
 
   configure.planner = {
     newwarMessage: {
-      leader: "Ready?",
+      leader: "Your clan ready? Take them to war!",
       member: "Ready to begin? Ask a clan leader to start a war"
     },
   	header: {

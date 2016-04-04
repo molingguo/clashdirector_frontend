@@ -91,6 +91,19 @@
 	}
 }
 
+.war-details-back-button a {
+	display: block;
+	position: absolute;
+	top: 1rem;
+	font-size: 4rem;
+	color: $light-orange;
+	z-index: 99;
+
+	&:hover {
+		color: $orange;
+	}
+}
+
 .war-details-header {
 	font-family: $header-font;
 	padding-top: 3rem;

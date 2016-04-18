@@ -2,7 +2,7 @@
 	<div class="login-wrapper">
 		<img class="login-logo" src="img/logo.png" alt="logo">
 		<uib-tabset active="active" class="planner-tabs col-xs-12">
-			<uib-tab index="0" heading="Sign Up" class="signup-tab">
+			<uib-tab index="0" heading="Sign Up" class="signup-tab" active="false">
 			<div class="form-group login-form">
 				<input type="text" class="form-control" placeholder="Username">
 			</div>
@@ -25,7 +25,7 @@
 				<button class="btn btn-default btn-block submit-button" ng-click="signUp()">Get Started</button>
 			</div>
 			</uib-tab>
-			<uib-tab index="1" heading="Log In" class="login-tab">
+			<uib-tab index="1" heading="Log In" class="login-tab" active="true">
 			<div class="btn-group col-xs-12 alternative-login">
 				<div class="row">
 					<label class="btn btn-default col-xs-6" ng-model="alternativeLogin" uib-btn-radio="'username'">by Username</label>

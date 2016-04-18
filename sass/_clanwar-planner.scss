@@ -90,13 +90,13 @@
 	&:hover {
 		cursor: move;
 	}
+
+	&.inactive {
+		pointer-events: none;
+	}
 	
 	.arrange-label {
 		@include text-ellipsis;
-
-		&.inactive {
-			pointer-events: none;
-		}
 	}
 
 	.draggable-icon {

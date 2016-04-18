@@ -567,12 +567,12 @@ START NEW WAR PAGE
   /* non-prefixed version, currently not supported by any browser */ }
   .arrange-label-list:hover {
     cursor: move; }
+  .arrange-label-list.inactive {
+    pointer-events: none; }
   .arrange-label-list .arrange-label {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis; }
-    .arrange-label-list .arrange-label.inactive {
-      pointer-events: none; }
   .arrange-label-list .draggable-icon {
     position: absolute;
     color: #999999;

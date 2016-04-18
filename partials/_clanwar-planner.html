@@ -61,7 +61,7 @@
 			    		<div class="col-xs-10 arrange-drop-list" data-drop="!arrangeViewMode" ng-model='arrangementList[index]' jqyoui-droppable="{multiple:true}" data-jqyoui-options="arrangementOptions(index)">
 			    			<div class="arrange-label-list" ng-class="{'inactive':arrangeViewMode}" ng-repeat="item in arrangementList[index] track by $index" ng-show="item.name" data-drag="!arrangeViewMode" data-jqyoui-options="{revert: 'invalid'}" ng-model="arrangementList[index]" jqyoui-draggable="{index: {{$index}}}">
 			    				<div class="row">
-			    					<div class="draggable-icon">
+			    					<div class="draggable-icon" ng-hide="arrangeViewMode">
 			    						<span class="glyphicon glyphicon-move"></span>
 			    					</div>
 			    					<div class="col-xs-12 arrange-label">
@@ -96,7 +96,7 @@
 		<div class="col-xs-12 action-buttons sticky-bottom-bar">
 			<div ng-hide="arrangeViewMode" class="text-right">
 				<button class="btn btn-default cancel-button" ng-click="arrangeViewMode=true">Cancel</button>
-				<button class="btn btn-default submit-button" ng-click="arrangeViewMode=true">Submit</button>
+				<button class="btn btn-default submit-button" ng-click="submitArrangement()">Submit</button>
 			</div>
 			<div ng-show="arrangeViewMode" class="text-right">
 				<button class="btn btn-default submit-button" ng-click="arrangeViewMode=false">Edit</button>

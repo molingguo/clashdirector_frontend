@@ -41,6 +41,12 @@ app.controller('MainController', function($http, $scope, $location, $uibModal, $
 				},
 				message: function () {
 					return configure.modalDialog.logoutMessage;
+				},
+				onlyOneButton: function() {
+					return false;
+				},
+				okayText: function() {
+					return "Okay";
 				}
 			}
 		});

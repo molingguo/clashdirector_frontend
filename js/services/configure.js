@@ -23,9 +23,11 @@ app.factory('configure', function(){
 
   configure.modalDialog = {
     confirmation: "Confirmation", 
+    notification: "Notification",
     cancelMessage: "Do you really want to discard your changes?",
     logoutMessage: "Do you really want to log out?",
-    startNewWarMessage: "Do you really want to start a new war?"
+    startNewWarMessage: "Do you really want to start a new war?",
+    arrangementUpdateMessage: "Your leader updated the war arrangement. "
   }
 
   return configure;

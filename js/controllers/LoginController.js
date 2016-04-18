@@ -2,6 +2,8 @@ app.controller('LoginController', function($http, $scope, $location, wars, confi
 	wars.setActiveLink("login");
 	$scope.rememberMe = false;
 	$scope.alternativeLogin = 'username';
+	//make the login tab active by default
+	$scope.active = 1;
 
 	if (Auth.isLoggedIn()) {
 		console.log('loggedin');

@@ -124,6 +124,12 @@ app.controller('ClanWarController', function($http, $scope, $location, wars, $ui
 				},
 				message: function () {
 					return configure.modalDialog.cancelMessage;
+				},
+				onlyOneButton: function() {
+					return false;
+				},
+				okayText: function() {
+					return "Okay";
 				}
 			}
 		});

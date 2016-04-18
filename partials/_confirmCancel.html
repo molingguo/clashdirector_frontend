@@ -5,6 +5,6 @@
     <h5 class="modal-confirmation-message">{{message}}</h5>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-default cancel-button" type="button" ng-click="cancel()">Cancel</button>
-    <button class="btn btn-default okay-button" type="button" ng-click="ok()">Okay</button>
+    <button class="btn btn-default cancel-button" type="button" ng-click="cancel()" ng-hide="onlyOneButton">Cancel</button>
+    <button class="btn btn-default okay-button" type="button" ng-click="ok()">{{okayText}}</button>
 </div>

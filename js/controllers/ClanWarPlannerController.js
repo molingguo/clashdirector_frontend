@@ -25,6 +25,10 @@ app.controller('ClanWarPlannerController', function($http, $scope, $location, $u
 		wars.setSignUpViewMode(false);
 	}
 	$scope.arrangeViewMode = false;
+	$scope.submitArrangement = function() {
+		$scope.arrangeViewMode = true;
+		wars.setNotification(true);
+	}
 	
 	var arrangementList = function() {
 		var list = [];
@@ -166,6 +170,12 @@ app.controller('ClanWarPlannerController', function($http, $scope, $location, $u
 				},
 				message: function () {
 					return configure.modalDialog.startNewWarMessage;
+				},
+				onlyOneButton: function() {
+					return false;
+				},
+				okayText: function() {
+					return "Okay";
 				}
 			}
 		});

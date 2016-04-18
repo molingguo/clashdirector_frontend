@@ -111,5 +111,17 @@ app.factory('wars', function($http){
     arrangementViewMode = toset;
   }
 
+  /*
+  NOTIFICATIONS
+   */
+  var hasNotification = false;
+  wars.getNotification = function() {
+    return hasNotification;
+  }
+
+  wars.setNotification = function(toset) {
+    hasNotification = toset;
+  }
+
   return wars;
 });

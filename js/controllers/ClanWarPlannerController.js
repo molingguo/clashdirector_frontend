@@ -14,11 +14,11 @@ app.controller('ClanWarPlannerController', function($http, $scope, $location, $u
 	$scope.planner = configure.planner;
 	$scope.warSize = wars.getCurrentWar().size;
 	$scope.currentUser = Auth.getUser();
-	$scope.selectTargets = [];
 	$scope.viewMode = function() {
 		return wars.getSignUpViewMode();
 	}
 	$scope.submitSignUp = function() {
+		wars.setSignerList($scope.signerList);
 		wars.setSignUpViewMode(true);
 	}
 	$scope.editSignUp = function() {
@@ -59,7 +59,7 @@ app.controller('ClanWarPlannerController', function($http, $scope, $location, $u
 	}
 	//$scope.warMembers = wars.getWarMembers();
 	$scope.warMembers = wars.getCurrentWar().warMembers;
-	$scope.signerList = createSignList();
+	$scope.signerList = wars.getSignerList() ? wars.getSignerList() : createSignList();
 	$scope.arrangementList = $scope.signerList;
 	$scope.waitingList = $scope.warMembers;
 
@@ -93,43 +93,55 @@ app.controller('ClanWarPlannerController', function($http, $scope, $location, $u
 	// 		}
 	// 	}
 	// }
+	// 
+	$scope.selectTargets = function() {
+		if(!$scope.signerList) return;
+		var targetArray = [];
+
+		for (i = 0; i < $scope.signerList.length; i++) {
+			if ($scope.containsCurrentUser(i)) {
+				targetArray.push(i);
+			}
+		}
+		return targetArray;
+	};
 
 	$scope.range = function(start, stop) {
 		return _.range(start, stop);
 	}
 
 	$scope.checkTarget = function(index) {
-		if (_.contains($scope.selectTargets, index)) {
-			$scope.selectTargets = _.without($scope.selectTargets, index);
-			$scope.signerList[index].pop();
+		if ($scope.containsCurrentUser(index)) {
+			$scope.signerList[index] = _.reject($scope.signerList[index], function(mem) {
+				return mem.name == Auth.getUser().name;
+			});
 		} else {
-			if ($scope.selectTargets.length >= 4) return;
-			$scope.selectTargets.push(index);
+			if ($scope.selectTargets().length >= 4) return;
 			$scope.signerList[index].push($scope.currentUser);
 		}
 	}
 
-	$scope.containsTarget = function(index) {
-		return _.contains($scope.selectTargets, index);
+	$scope.containsCurrentUser = function(index) {
+		if (!$scope.signerList || !Auth.getUser()) return;
+		return _.findWhere($scope.signerList[index], {name: Auth.getUser().name});
 	}
 
-	$scope.getPreference = function(index) {
-		if ($scope.containsTarget(index)) {
-			return $scope.selectTargets.indexOf(index) + 1;
-		} else {
-			return null;
-		}
+	$scope.isCurrentUser = function(signer) {
+		if(!signer || !Auth.getUser()) return;
+		return signer.name == Auth.getUser().name;
 	}
 
 	$scope.clearAllTargets = function() {
-		for (i = 0; i < $scope.selectTargets.length; i++) {
-			$scope.signerList[$scope.selectTargets[i]].pop();
+		for (i = 0; i < $scope.signerList.length; i++) {
+			if ($scope.containsCurrentUser(i)) {
+				$scope.signerList[i] = _.reject($scope.signerList[i], function(mem) {
+					return mem.name == Auth.getUser().name;
+				});
+			}
 		}
-		$scope.selectTargets.length = 0;
 	}
 
 	$scope.removeLabel = function(item, arrayindex) {
-		console.log(item);
 		var index = $scope.arrangementList[arrayindex].indexOf(item);
 		$scope.arrangementList[arrayindex].splice(index, 1);  
 		$scope.waitingList.push(item);

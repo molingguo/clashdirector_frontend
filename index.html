@@ -40,8 +40,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 <body ng-controller="MainController">
-    <div ng-view autoscroll="true" ng-if="getActiveLink()=='login'"></div>
-	<div id="wrapper" ng-if="getActiveLink()!='login'">
+    <div id="wrapper" ng-class="{'not-log-in': !isLoggedIn()}">
 	<!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">

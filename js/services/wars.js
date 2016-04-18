@@ -85,6 +85,15 @@ app.factory('wars', function($http){
    */
   var signUpViewMode = false;
   var arrangementViewMode = false;
+  var signerList = null;
+
+  wars.getSignerList = function() {
+    return signerList;
+  }
+
+  wars.setSignerList = function(toset) {
+    signerList = toset;
+  }
 
   wars.getSignUpViewMode = function() {
     return signUpViewMode;

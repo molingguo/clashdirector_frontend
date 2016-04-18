@@ -16,6 +16,10 @@ app.controller('MainController', function($http, $scope, $location, $uibModal, $
 		$location.path('login');
 	}
 
+	$scope.isLoggedIn = function() {
+		return Auth.isLoggedIn();
+	}
+
 	$scope.getUser = function() {
 		return Auth.getUser();
 	}

@@ -12,10 +12,10 @@
 			<div class="col-xs-2 text-center">
 				<h5>Opponent Rank</h5>
 			</div>
-			<div class="col-xs-7 text-center">
+			<div class="col-xs-8 text-center">
 				<h5>Callers</h5>
 			</div>
-			<div class="col-xs-3 text-center">
+			<div class="col-xs-2 text-center">
 				<h5>Your Targets</h5>
 			</div>
 			<ul class="col-xs-12 sign-up-list body-for-sticky-bottom">
@@ -23,21 +23,21 @@
 			    	<div class="col-xs-2 text-center opponent-index">
 			    		{{index+1}}
 			    	</div>
-			    	<div class="col-xs-8 current-signer-list" ng-class="{'contains-current':containsTarget(index)}">
-			    		<div class="col-xs-6 col-sm-4 col-md-3 signer-label" ng-repeat="signer in signerList[index]"><span ng-show="signer.warrank">{{signer.warrank}}. </span>{{signer.name}}</div>
+			    	<div class="col-xs-8 current-signer-list">
+			    		<div class="col-xs-6 col-sm-4 col-md-3 signer-label" ng-repeat="signer in signerList[index]" ng-class="{'current-user': isCurrentUser(signer)}"><span ng-show="signer.warrank">{{signer.warrank}}. </span>{{signer.name}}</div>
 			    	</div>
-			    	<div class="col-xs-1 text-center sign-up-checkbox">
-			    		<span class="glyphicon" ng-click="checkTarget(index)" ng-class="{'glyphicon-check':containsTarget(index), 'glyphicon-unchecked':!containsTarget(index)}" ng-hide="viewMode()"></span>
+			    	<div class="col-xs-2 text-center sign-up-checkbox">
+			    		<span class="glyphicon" ng-click="checkTarget(index)" ng-class="{'glyphicon-check':containsCurrentUser(index), 'glyphicon-unchecked':!containsCurrentUser(index)}" ng-hide="viewMode()"></span>
 			    	</div>
-			    	<div class="col-xs-1 text-center sign-up-preference" ng-show="getPreference(index)">
+<!-- 			    	<div class="col-xs-1 text-center sign-up-preference" ng-show="getPreference(index)">
 			    		{{getPreference(index) | ordinal}}
-			    	</div>
+			    	</div> -->
 			    </li>
 			</ul>
 			<div class="col-xs-12 text-right action-buttons sticky-bottom-bar">
 				<div class="text-right" ng-hide="viewMode()">
 					<button class="btn btn-default cancel-button" ng-click="clearAllTargets()">Clear</button>
-					<button class="btn btn-default submit-button" ng-class="{'inactive':selectTargets.length<1}" ng-click="submitSignUp()">Submit</button>
+					<button class="btn btn-default submit-button" ng-class="{'inactive':selectTargets().length<1}" ng-click="submitSignUp()">Submit</button>
 				</div>
 				<div class="text-right" ng-show="viewMode()">
 					<button class="btn btn-default submit-button" ng-click="editSignUp()">Edit</button>

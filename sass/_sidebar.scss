@@ -2,7 +2,8 @@
     padding-left: 0;
     @include transition(0.5s);
 
-    &.toggled {
+    &.toggled, &.not-log-in {
+
     	padding-left: $sidebar-width;
 
     	#sidebar-wrapper {
@@ -80,7 +81,7 @@
     #wrapper {
         padding-left: $sidebar-width;
 
-        &.toggled {
+        &.toggled, &.not-log-in {
         	padding-left: 0;
 
         	#sidebar-wrapper { 

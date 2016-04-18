@@ -111,10 +111,11 @@ a {
   font-family: Arial, sans-serif; }
 
 .fullscreen-wrapper {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background: #000;
-  position: relative; }
+  position: relative;
+  margin-left: -3rem; }
 
 .login-wrapper {
   width: 35rem;
@@ -158,11 +159,11 @@ a {
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
-  #wrapper.toggled {
+  #wrapper.toggled, #wrapper.not-log-in {
     padding-left: 250px; }
-    #wrapper.toggled #sidebar-wrapper {
+    #wrapper.toggled #sidebar-wrapper, #wrapper.not-log-in #sidebar-wrapper {
       width: 250px; }
-    #wrapper.toggled #page-content-wrapper {
+    #wrapper.toggled #page-content-wrapper, #wrapper.not-log-in #page-content-wrapper {
       position: absolute;
       margin-right: -250px; }
 
@@ -217,11 +218,11 @@ a {
 @media (min-width: 768px) {
   #wrapper {
     padding-left: 250px; }
-    #wrapper.toggled {
+    #wrapper.toggled, #wrapper.not-log-in {
       padding-left: 0; }
-      #wrapper.toggled #sidebar-wrapper {
+      #wrapper.toggled #sidebar-wrapper, #wrapper.not-log-in #sidebar-wrapper {
         width: 0; }
-      #wrapper.toggled #page-content-wrapper {
+      #wrapper.toggled #page-content-wrapper, #wrapper.not-log-in #page-content-wrapper {
         position: relative;
         margin-right: 0; }
 
@@ -533,7 +534,7 @@ START NEW WAR PAGE
     border: 1px solid #dddddd;
     font-size: 1.4rem;
     pointer-events: none; }
-  .current-signer-list.contains-current .signer-label:last-child {
+  .current-signer-list .current-user {
     color: #F9690E; }
 
 .arrange-drop-list {

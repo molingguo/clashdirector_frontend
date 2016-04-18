@@ -63,10 +63,8 @@
 		pointer-events: none;
 	}
 
-	&.contains-current {
-		.signer-label:last-child {
-			color: $orange;
-		}
+	.current-user {
+		color: $orange;
 	}
 }
 
